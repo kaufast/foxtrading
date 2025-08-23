@@ -8,7 +8,7 @@ class FoxTradingApp {
         this.detector = null;
         this.lazyLoader = null;
         this.isInitialized = false;
-        this.debug = window.location.hostname === 'localhost' || window.location.search.includes('debug=true');
+        this.debug = window.location.hostname === 'localhost' || window.location.search.includes('debug=true') || true; // Force debug for now
         
         // Configuration
         this.config = {
@@ -55,6 +55,12 @@ class FoxTradingApp {
             // Detect initial language
             const detection = this.detector.detectLanguage();
             this.log('Language detection result:', detection);
+            console.log('🔍 FULL URL ANALYSIS:', {
+                pathname: window.location.pathname,
+                search: window.location.search,
+                hash: window.location.hash,
+                href: window.location.href
+            });
 
             // Initialize i18n system
             this.i18n = new I18n({
@@ -225,16 +231,25 @@ class FoxTradingApp {
 
         // Add event listener with proper binding
         const handleChange = (e) => {
+            console.log('🎯 Language selector changed!', e.target.value);
             e.preventDefault();
+            e.stopPropagation();
             const newLanguage = e.target.value;
             this.log(`Language selector changed to: ${newLanguage}`);
             this.handleLanguageChange(newLanguage, 'manual');
         };
 
-        select.addEventListener('change', handleChange);
-        select.addEventListener('click', (e) => {
+        const handleClick = (e) => {
+            console.log('🎯 Language selector clicked!', e);
             e.stopPropagation();
-        });
+        };
+
+        select.addEventListener('change', handleChange);
+        select.addEventListener('click', handleClick);
+        
+        // Also add focus and mousedown events for better debugging
+        select.addEventListener('focus', () => console.log('🎯 Language selector focused'));
+        select.addEventListener('mousedown', () => console.log('🎯 Language selector mousedown'));
 
         container.appendChild(select);
         

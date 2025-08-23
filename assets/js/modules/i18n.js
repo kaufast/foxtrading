@@ -86,17 +86,26 @@ class I18n {
      */
     async _fetchTranslations(lang) {
         const url = `${this.basePath}${lang}.json`;
+        console.log(`🌐 LOADING TRANSLATIONS: ${url}`);
         
         try {
             const response = await fetch(url);
+            console.log(`🌐 FETCH RESPONSE:`, {
+                url,
+                status: response.status,
+                statusText: response.statusText,
+                ok: response.ok
+            });
             
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: Failed to load ${url}`);
             }
             
-            return await response.json();
+            const data = await response.json();
+            console.log(`🌐 LOADED TRANSLATIONS FOR ${lang}:`, data);
+            return data;
         } catch (error) {
-            console.error(`Failed to load translations for ${lang}:`, error);
+            console.error(`🚫 FAILED TO LOAD TRANSLATIONS FOR ${lang}:`, error);
             
             // Return fallback translations if available
             if (lang !== this.fallbackLanguage && this.translations[this.fallbackLanguage]) {
@@ -211,14 +220,26 @@ class I18n {
      */
     updateDOM() {
         const elements = document.querySelectorAll('[data-i18n]');
-        const fragment = document.createDocumentFragment();
+        console.log(`🔄 UPDATING DOM: Found ${elements.length} elements with data-i18n`);
         
-        elements.forEach(element => {
+        elements.forEach((element, index) => {
+            const key = element.getAttribute('data-i18n');
+            console.log(`🔄 Element ${index + 1}: ${key} ->`, element);
             this._updateElement(element);
         });
         
         // Update language selector if it exists
         this._updateLanguageSelector();
+        
+        console.log(`✅ DOM UPDATE COMPLETE for language: ${this.currentLanguage}`);
+    }
+    
+    /**
+     * Force page update (public method for debugging)
+     */
+    updatePage() {
+        console.log('🔄 FORCING PAGE UPDATE...');
+        this.updateDOM();
     }
 
     /**
