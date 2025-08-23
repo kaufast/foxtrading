@@ -672,11 +672,112 @@ class FoxTradingApp {
                 });
             });
 
+            // Services section
+            const servicesLabel = document.querySelector('#service-section .sub-label-section');
+            if (servicesLabel) servicesLabel.setAttribute('data-i18n', 'services.label');
+
+            // Service tabs - need to map each service
+            const serviceTitles = document.querySelectorAll('.benefit-title');
+            const serviceKeys = ['services.ecoFriendly.title', 'services.sustainable.title', 'services.greenHome.title', 'services.ecoConscious.title'];
+            serviceTitles.forEach((title, index) => {
+                if (serviceKeys[index]) {
+                    title.setAttribute('data-i18n', serviceKeys[index]);
+                }
+            });
+
+            const serviceDescs = document.querySelectorAll('.benefit-desc');
+            const serviceDescKeys = ['services.ecoFriendly.description', 'services.sustainable.description', 'services.greenHome.description', 'services.ecoConscious.description'];
+            serviceDescs.forEach((desc, index) => {
+                if (serviceDescKeys[index]) {
+                    desc.setAttribute('data-i18n', serviceDescKeys[index]);
+                }
+            });
+
+            // Projects section
+            const projectsLabel = document.querySelector('#project-section .sub-label-section');
+            if (projectsLabel) projectsLabel.setAttribute('data-i18n', 'projects.label');
+
+            const projectsTitle = document.querySelector('#project-section .title-section');
+            if (projectsTitle) projectsTitle.setAttribute('data-i18n', 'projects.title');
+
+            // Project titles and descriptions
+            const projectTitles = document.querySelectorAll('.title-project');
+            const projectKeys = ['projects.project1.title', 'projects.project2.title', 'projects.project3.title'];
+            projectTitles.forEach((title, index) => {
+                if (projectKeys[index]) {
+                    title.setAttribute('data-i18n', projectKeys[index]);
+                }
+            });
+
+            const projectDescs = document.querySelectorAll('.description-project');
+            const projectDescKeys = ['projects.project1.description', 'projects.project2.description', 'projects.project3.description'];
+            projectDescs.forEach((desc, index) => {
+                if (projectDescKeys[index]) {
+                    desc.setAttribute('data-i18n', projectDescKeys[index]);
+                }
+            });
+
+            // Project specifications
+            const specTitles = document.querySelectorAll('.title-spesification');
+            const specKeys = ['projects.project1.totalArea', 'projects.project1.totalRoom', 'projects.project1.dateOfBuild'];
+            specTitles.forEach((spec, index) => {
+                if (specKeys[index]) {
+                    spec.setAttribute('data-i18n', specKeys[index]);
+                }
+            });
+
+            // Testimonials section
+            const testimonialsLabel = document.querySelector('#testimonial-section .sub-label-section');
+            if (testimonialsLabel) testimonialsLabel.setAttribute('data-i18n', 'testimonials.label');
+
+            const testimonialsTitle = document.querySelector('#testimonial-section .title-section');
+            if (testimonialsTitle) testimonialsTitle.setAttribute('data-i18n', 'testimonials.title');
+
+            // Team section
+            const teamLabel = document.querySelector('#team-section .sub-label-section');
+            if (teamLabel) teamLabel.setAttribute('data-i18n', 'team.label');
+
+            const teamTitle = document.querySelector('#team-section .title-section');
+            if (teamTitle) teamTitle.setAttribute('data-i18n', 'team.title');
+
+            // FAQ section
+            const faqLabel = document.querySelector('#faq-section .sub-label-section');
+            if (faqLabel) faqLabel.setAttribute('data-i18n', 'faq.label');
+
+            // FAQ questions and answers
+            const faqQuestions = document.querySelectorAll('.title-question');
+            const faqKeys = ['faq.q1.question', 'faq.q2.question', 'faq.q3.question', 'faq.q4.question'];
+            faqQuestions.forEach((question, index) => {
+                if (faqKeys[index]) {
+                    question.setAttribute('data-i18n', faqKeys[index]);
+                }
+            });
+
+            const faqAnswers = document.querySelectorAll('.answer-text');
+            const faqAnswerKeys = ['faq.q1.answer', 'faq.q2.answer', 'faq.q3.answer', 'faq.q4.answer'];
+            faqAnswers.forEach((answer, index) => {
+                if (faqAnswerKeys[index]) {
+                    answer.setAttribute('data-i18n', faqAnswerKeys[index]);
+                }
+            });
+
             // Book a call buttons
             const bookCallButtons = document.querySelectorAll('.button-book-a-call div');
             bookCallButtons.forEach(btn => btn.setAttribute('data-i18n', 'nav.bookCall'));
 
-            this.log('Translation attributes added successfully');
+            // Footer
+            const footerLinks = document.querySelectorAll('.footer-link');
+            const footerKeys = ['footer.changelog', 'footer.styleGuide', 'footer.licence'];
+            footerLinks.forEach((link, index) => {
+                if (footerKeys[index]) {
+                    link.setAttribute('data-i18n', footerKeys[index]);
+                }
+            });
+
+            const copyright = document.querySelector('.copyright-footer');
+            if (copyright) copyright.setAttribute('data-i18n', 'footer.rights');
+
+            this.log('Translation attributes added successfully to ALL sections');
 
         } catch (error) {
             console.error('Error adding translation attributes:', error);

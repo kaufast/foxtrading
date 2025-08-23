@@ -26,6 +26,7 @@
     "projects": "Proyectos"
   },
   "services": {
+    "label": "SERVICIOS",
     "ecoFriendly": {
       "title": "1. Construcción ecológica",
       "description": "Construyendo un futuro mejor con materiales sostenibles, diseños energéticamente eficientes y prácticas ambientalmente conscientes, sin comprometer el estilo o la comodidad.",
