@@ -16,8 +16,8 @@
   },
   "about": {
     "label": "ACERCA DE NOSOTROS",
-    "title": "En Terravia, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes. Ya sea que sueñes con una residencia encantadora o un ambiente de oficina elegante, estamos aquí para dar vida a tus ideas.",
-    "description": "Desde el concepto hasta la finalización, combinamos creatividad, funcionalidad y precisión en cada proyecto. En Terravia, tu espacio no solo se construye, se elabora cuidadosamente para inspirar, impresionar y perdurar.",
+    "title": "En Foxtrading, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes. Ya sea que sueñes con una residencia encantadora o un ambiente de oficina elegante, estamos aquí para dar vida a tus ideas.",
+    "description": "Desde el concepto hasta la finalización, combinamos creatividad, funcionalidad y precisión en cada proyecto. En Foxtrading, tu espacio no solo se construye, se elabora cuidadosamente para inspirar, impresionar y perdurar.",
     "established": "Establecidos desde hace",
     "workAcross": "Trabajamos en",
     "over": "Más de",
@@ -94,25 +94,25 @@
     "label": "Testimonios",
     "title": "Escucha las voces de los espacios que hemos construido",
     "testimonial1": {
-      "text": "El equipo de Terravia tradujo nuestra visión en un espacio de trabajo que se siente abierto, intencional y vivo. El diseño minimalista no es solo estético, es productivo, inspirador y construido para la sostenibilidad.",
+      "text": "El equipo de Foxtrading tradujo nuestra visión en un espacio de trabajo que se siente abierto, intencional y vivo. El diseño minimalista no es solo estético, es productivo, inspirador y construido para la sostenibilidad.",
       "author": "Anna de la Vega, Propietaria de Tiga Café"
     },
     "testimonial2": {
-      "text": "Quedamos impresionados por la claridad de su proceso de diseño. Necesitábamos un espacio comercial que reflejara los valores de nuestra marca: calma, limpieza y consciencia. Terravia dio vida a esa visión sin compromisos.",
+      "text": "Quedamos impresionados por la claridad de su proceso de diseño. Necesitábamos un espacio comercial que reflejara los valores de nuestra marca: calma, limpieza y consciencia. Foxtrading dio vida a esa visión sin compromisos.",
       "author": "Marcus T, Director Creativo en Mono Studio"
     },
     "testimonial3": {
-      "text": "Trabajar con Terravia fue sin esfuerzo. Realmente entendieron nuestro deseo de un espacio tranquilo y funcional que respetara el medio ambiente. Cada detalle, desde los materiales naturales hasta el diseño de energía pasiva, refleja nuestros valores.",
+      "text": "Trabajar con Foxtrading fue sin esfuerzo. Realmente entendieron nuestro deseo de un espacio tranquilo y funcional que respetara el medio ambiente. Cada detalle, desde los materiales naturales hasta el diseño de energía pasiva, refleja nuestros valores.",
       "author": "Emily R, Propietaria de Casa Luma"
     }
   },
   "team": {
     "label": "Equipo principal",
-    "title": "En Terravia, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes.",
+    "title": "En Foxtrading, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes.",
     "member1": {
       "name": "Isabella García",
       "position": "CEO y COO",
-      "description": "Isabella García impulsa el crecimiento y rendimiento de Terravia como CEO y COO. Su visión combina perspicacia empresarial con una profunda apreciación por el diseño impactante."
+      "description": "Isabella García impulsa el crecimiento y rendimiento de Foxtrading como CEO y COO. Su visión combina perspicacia empresarial con una profunda apreciación por el diseño impactante."
     },
     "member2": {
       "name": "Irish Conklin",
@@ -141,12 +141,12 @@
       "answer": "Sí, ofrecemos servicios tanto de diseño como de construcción. Esto nos permite gestionar tu proyecto de principio a fin, asegurando una transición fluida desde la fase de planificación hasta la construcción final. Nuestro equipo trabaja colaborativamente para mantener la consistencia, calidad y comunicación clara durante todo el proceso."
     },
     "q3": {
-      "question": "¿En qué tipos de proyectos se especializa Terravia?",
-      "answer": "Terravia se especializa en una amplia gama de proyectos, incluyendo desarrollos residenciales, comerciales y de uso mixto. Tenemos experiencia particular en diseño moderno y funcional que equilibra el atractivo estético con soluciones prácticas. Ya sean casas privadas, espacios de oficina, ambientes de venta al por menor o desarrollos a gran escala."
+      "question": "¿En qué tipos de proyectos se especializa Foxtrading?",
+      "answer": "Foxtrading se especializa en una amplia gama de proyectos, incluyendo desarrollos residenciales, comerciales y de uso mixto. Tenemos experiencia particular en diseño moderno y funcional que equilibra el atractivo estético con soluciones prácticas. Ya sean casas privadas, espacios de oficina, ambientes de venta al por menor o desarrollos a gran escala."
     },
     "q4": {
-      "question": "¿Cómo incorpora Terravia la sostenibilidad en sus diseños?",
-      "answer": "En Terravia, la sostenibilidad es una parte fundamental de nuestro enfoque de diseño. Priorizamos soluciones energéticamente eficientes, materiales ecológicos y prácticas de construcción inteligentes para reducir el impacto ambiental mientras mejoramos el valor a largo plazo para nuestros clientes."
+      "question": "¿Cómo incorpora Foxtrading la sostenibilidad en sus diseños?",
+      "answer": "En Foxtrading, la sostenibilidad es una parte fundamental de nuestro enfoque de diseño. Priorizamos soluciones energéticamente eficientes, materiales ecológicos y prácticas de construcción inteligentes para reducir el impacto ambiental mientras mejoramos el valor a largo plazo para nuestros clientes."
     }
   },
   "footer": {

@@ -16,8 +16,8 @@
   },
   "about": {
     "label": "ABOUT US",
-    "title": "At Terravia, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces. Whether you're dreaming of a charming residence or a sleek office environment, we are here to bring your ideas to life.",
-    "description": "From concept to completion, we blend creativity, functionality, and precision in every project. At Terravia, your space isn't just built — it's thoughtfully crafted to inspire, impress, and endure.",
+    "title": "At Foxtrading, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces. Whether you're dreaming of a charming residence or a sleek office environment, we are here to bring your ideas to life.",
+    "description": "From concept to completion, we blend creativity, functionality, and precision in every project. At Foxtrading, your space isn't just built — it's thoughtfully crafted to inspire, impress, and endure.",
     "established": "Established for",
     "workAcross": "Work across",
     "over": "Over",
@@ -94,25 +94,25 @@
     "label": "Testimonials",
     "title": "Hear the voices from the spaces we've built",
     "testimonial1": {
-      "text": "The team at Terravia translated our vision into a workspace that feels open, intentional, and alive. The minimalist design isn't just aesthetic—it's productive, inspiring, and built for sustainability.",
+      "text": "The team at Foxtrading translated our vision into a workspace that feels open, intentional, and alive. The minimalist design isn't just aesthetic—it's productive, inspiring, and built for sustainability.",
       "author": "Anna de la Vega, Owner of Tiga Cafe"
     },
     "testimonial2": {
-      "text": "We were blown away by the clarity of their design process. We needed a commercial space that reflected our brand values—calm, clean, and conscious. Terravia brought that vision to life without compromise.",
+      "text": "We were blown away by the clarity of their design process. We needed a commercial space that reflected our brand values—calm, clean, and conscious. Foxtrading brought that vision to life without compromise.",
       "author": "Marcus T, Creative Director at Mono Studio"
     },
     "testimonial3": {
-      "text": "Working with Terravia was effortless. They truly understood our desire for a calm, functional space that respected the environment. Every detail—from the natural materials to the passive energy design—reflects our values.",
+      "text": "Working with Foxtrading was effortless. They truly understood our desire for a calm, functional space that respected the environment. Every detail—from the natural materials to the passive energy design—reflects our values.",
       "author": "Emily R, Homeowner of Luma House"
     }
   },
   "team": {
     "label": "Core teams",
-    "title": "At Terravia, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces.",
+    "title": "At Foxtrading, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces.",
     "member1": {
       "name": "Isabella Garcia",
       "position": "CEO and COO",
-      "description": "Isabella Garcia drives Terravia growth and performance as both CEO and COO. Her vision blends business acumen with a deep appreciation for design that is impactful."
+      "description": "Isabella Garcia drives Foxtrading growth and performance as both CEO and COO. Her vision blends business acumen with a deep appreciation for design that is impactful."
     },
     "member2": {
       "name": "Irish Conklin",
@@ -141,12 +141,12 @@
       "answer": "Yes, we offer both design and construction services. This allows us to manage your project from start to finish, ensuring a smooth transition from the planning phase to the final build. Our team works collaboratively to maintain consistency, quality, and clear communication throughout the entire process."
     },
     "q3": {
-      "question": "What types of projects does Terravia specialise in?",
-      "answer": "Terravia specialises in a wide range of projects, including residential, commercial, and mixed-use developments. We're particularly experienced in modern, functional design that balances aesthetic appeal with practical solutions. Whether it's private homes, office spaces, retail environments, or large-scale developments."
+      "question": "What types of projects does Foxtrading specialise in?",
+      "answer": "Foxtrading specialises in a wide range of projects, including residential, commercial, and mixed-use developments. We're particularly experienced in modern, functional design that balances aesthetic appeal with practical solutions. Whether it's private homes, office spaces, retail environments, or large-scale developments."
     },
     "q4": {
-      "question": "How does Terravia incorporate sustainability into its designs?",
-      "answer": "At Terravia, sustainability is a core part of our design approach. We prioritise energy-efficient solutions, eco-friendly materials, and smart building practices to reduce environmental impact whilst enhancing long-term value for our clients."
+      "question": "How does Foxtrading incorporate sustainability into its designs?",
+      "answer": "At Foxtrading, sustainability is a core part of our design approach. We prioritise energy-efficient solutions, eco-friendly materials, and smart building practices to reduce environmental impact whilst enhancing long-term value for our clients."
     }
   },
   "footer": {
