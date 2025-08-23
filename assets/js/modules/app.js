@@ -693,6 +693,20 @@ class FoxTradingApp {
                 }
             });
 
+            // Service facts and stats in detail cards
+            const serviceFacts = document.querySelectorAll('.benefit-wrapper-content .paragraph-body-3');
+            const serviceFactKeys = ['services.ecoFriendly.fact', 'services.sustainable.fact', 'services.greenHome.fact', 'services.ecoConscious.fact'];
+            serviceFacts.forEach((fact, index) => {
+                if (serviceFactKeys[index]) {
+                    fact.setAttribute('data-i18n', serviceFactKeys[index]);
+                }
+            });
+
+            // Service stat values and labels
+            const serviceStatValues = document.querySelectorAll('.benefit-amount-text');
+            const serviceStatLabels = document.querySelectorAll('.benefit-value');
+            // These are complex nested elements, let's add specific mapping for each service
+
             // Projects section
             const projectsLabel = document.querySelector('#project-section .sub-label-section');
             if (projectsLabel) projectsLabel.setAttribute('data-i18n', 'projects.label');
@@ -726,6 +740,26 @@ class FoxTradingApp {
                 }
             });
 
+            // Project specification values 
+            const specValues = document.querySelectorAll('.value-spesification');
+            const specValueKeys = ['projects.project1.area', 'projects.project1.rooms', 'projects.project1.date', 
+                                   'projects.project2.area', 'projects.project2.rooms', 'projects.project2.date',
+                                   'projects.project3.area', 'projects.project3.rooms', 'projects.project3.date'];
+            specValues.forEach((value, index) => {
+                if (specValueKeys[index]) {
+                    value.setAttribute('data-i18n', specValueKeys[index]);
+                }
+            });
+
+            // Project type labels (tags like "Sustainable living designs")
+            const projectTypes = document.querySelectorAll('.project-type-text');
+            const projectTypeKeys = ['projects.sustainableLiving', 'projects.greenHomeSolutions', 'projects.ecoFriendlyConstruction', 'projects.ecoConsciousArchitecture'];
+            projectTypes.forEach((type, index) => {
+                if (projectTypeKeys[index]) {
+                    type.setAttribute('data-i18n', projectTypeKeys[index]);
+                }
+            });
+
             // Testimonials section
             const testimonialsLabel = document.querySelector('#testimonial-section .sub-label-section');
             if (testimonialsLabel) testimonialsLabel.setAttribute('data-i18n', 'testimonials.label');
@@ -733,12 +767,54 @@ class FoxTradingApp {
             const testimonialsTitle = document.querySelector('#testimonial-section .title-section');
             if (testimonialsTitle) testimonialsTitle.setAttribute('data-i18n', 'testimonials.title');
 
+            // Testimonial texts and authors
+            const testimonialTexts = document.querySelectorAll('.testimonial-text');
+            const testimonialKeys = ['testimonials.testimonial1.text', 'testimonials.testimonial2.text', 'testimonials.testimonial3.text'];
+            testimonialTexts.forEach((text, index) => {
+                if (testimonialKeys[index]) {
+                    text.setAttribute('data-i18n', testimonialKeys[index]);
+                }
+            });
+
+            const testimonialNames = document.querySelectorAll('.testimonial-name');
+            const testimonialNameKeys = ['testimonials.testimonial1.author', 'testimonials.testimonial2.author', 'testimonials.testimonial3.author'];
+            testimonialNames.forEach((name, index) => {
+                if (testimonialNameKeys[index]) {
+                    name.setAttribute('data-i18n', testimonialNameKeys[index]);
+                }
+            });
+
             // Team section
             const teamLabel = document.querySelector('#team-section .sub-label-section');
             if (teamLabel) teamLabel.setAttribute('data-i18n', 'team.label');
 
             const teamTitle = document.querySelector('#team-section .title-section');
             if (teamTitle) teamTitle.setAttribute('data-i18n', 'team.title');
+
+            // Team member names and positions
+            const teamNames = document.querySelectorAll('.team-name');
+            const teamNameKeys = ['team.member1.name', 'team.member2.name', 'team.member3.name', 'team.member4.name'];
+            teamNames.forEach((name, index) => {
+                if (teamNameKeys[index]) {
+                    name.setAttribute('data-i18n', teamNameKeys[index]);
+                }
+            });
+
+            const teamPositions = document.querySelectorAll('.team-position');
+            const teamPositionKeys = ['team.member1.position', 'team.member2.position', 'team.member3.position', 'team.member4.position'];
+            teamPositions.forEach((position, index) => {
+                if (teamPositionKeys[index]) {
+                    position.setAttribute('data-i18n', teamPositionKeys[index]);
+                }
+            });
+
+            const teamDescriptions = document.querySelectorAll('.team-description');
+            const teamDescKeys = ['team.member1.description', 'team.member2.description', 'team.member3.description', 'team.member4.description'];
+            teamDescriptions.forEach((desc, index) => {
+                if (teamDescKeys[index]) {
+                    desc.setAttribute('data-i18n', teamDescKeys[index]);
+                }
+            });
 
             // FAQ section
             const faqLabel = document.querySelector('#faq-section .sub-label-section');
