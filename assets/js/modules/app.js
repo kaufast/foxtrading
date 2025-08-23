@@ -76,6 +76,14 @@ class FoxTradingApp {
             // Create and setup language selector
             this.createLanguageSelector();
 
+            // Force initial translation update for debug
+            if (this.debug) {
+                setTimeout(() => {
+                    this.log('Debug: Forcing initial translation update');
+                    this.i18n.updatePage();
+                }, 1000);
+            }
+
             // Setup form handlers
             this.setupFormHandlers();
 
@@ -268,6 +276,9 @@ class FoxTradingApp {
             if (this.i18n) {
                 await this.i18n.setLanguage(newLanguage);
                 this.log(`Language changed successfully to ${newLanguage}`);
+                
+                // Update URL to reflect language change
+                this.updateURL(newLanguage);
             } else {
                 this.log('i18n system not available');
             }
@@ -298,20 +309,19 @@ class FoxTradingApp {
     }
 
     /**
-     * Update URL with language parameter
+     * Update URL with language path
      */
     updateURL(language) {
         try {
-            const url = new URL(window.location);
-            
-            if (language !== this.config.defaultLanguage) {
-                url.searchParams.set('lang', language);
+            if (language === this.config.defaultLanguage) {
+                // For default language (English), redirect to root
+                if (window.location.pathname !== '/') {
+                    window.location.href = '/';
+                }
             } else {
-                url.searchParams.delete('lang');
+                // For non-default languages, redirect to path-based URL
+                window.location.href = `/${language}`;
             }
-            
-            // Update URL without page reload
-            window.history.pushState({}, '', url);
             
         } catch (error) {
             console.warn('Error updating URL:', error);

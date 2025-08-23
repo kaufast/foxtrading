@@ -137,6 +137,23 @@ class LanguageDetector {
         const result = { detected: false, language: null, source: 'url' };
         
         try {
+            // First check for path-based routing (e.g., /es-MX)
+            const pathname = window.location.pathname;
+            const pathSegments = pathname.split('/').filter(segment => segment.length > 0);
+            
+            // Check if first path segment is a supported language
+            if (pathSegments.length > 0) {
+                const potentialLang = pathSegments[0];
+                if (this.supportedLanguages.includes(potentialLang)) {
+                    result.detected = true;
+                    result.language = potentialLang;
+                    result.confidence = 1.0;
+                    result.method = 'path';
+                    return result;
+                }
+            }
+            
+            // Fallback to query parameter detection (?lang=es-MX)
             const urlParams = new URLSearchParams(window.location.search);
             const langParam = urlParams.get('lang') || urlParams.get('language');
             
@@ -144,6 +161,7 @@ class LanguageDetector {
                 result.detected = true;
                 result.language = langParam;
                 result.confidence = 1.0;
+                result.method = 'query';
             }
             
         } catch (error) {
