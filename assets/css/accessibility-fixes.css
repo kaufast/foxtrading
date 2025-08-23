@@ -1,0 +1,96 @@
+/**
+ * Accessibility Fixes for Contrast and ARIA Issues
+ * Ensures proper color contrast ratios and unique IDs
+ */
+
+/* Fix testimonial text contrast */
+.testimonial-name {
+    color: #333333 !important; /* Dark gray for better contrast */
+    font-weight: 600;
+}
+
+.testimonial-item {
+    background-color: #ffffff !important; /* White background */
+    color: #333333 !important; /* Dark text */
+    border: 1px solid #e0e0e0;
+}
+
+.testimonial-text {
+    color: #444444 !important; /* Dark gray for readability */
+    line-height: 1.6;
+}
+
+/* Fix team section contrast */
+.team-position {
+    color: #666666 !important; /* Medium gray for sufficient contrast */
+    font-weight: 500;
+}
+
+.team-card-content {
+    background-color: #ffffff !important; /* White background */
+    color: #333333 !important; /* Dark text */
+}
+
+.team-name {
+    color: #222222 !important; /* Very dark for high contrast */
+    font-weight: 600;
+}
+
+.team-description {
+    color: #555555 !important; /* Dark gray for readability */
+    line-height: 1.5;
+}
+
+/* Ensure proper contrast for interactive elements */
+.team-item:hover .team-name {
+    color: #000000 !important;
+}
+
+.team-item:hover .team-position {
+    color: #444444 !important;
+}
+
+.team-item:hover .team-description {
+    color: #333333 !important;
+}
+
+/* Fix any other low-contrast elements */
+.testimonial-name-wrapper .line {
+    background-color: #666666 !important; /* Darker line for visibility */
+}
+
+/* Ensure form labels have good contrast */
+.field-label {
+    color: #333333 !important;
+    font-weight: 500;
+}
+
+/* Make sure all text inputs have proper contrast */
+.input-field {
+    color: #333333 !important;
+    border-color: #999999 !important;
+}
+
+.input-field::placeholder {
+    color: #666666 !important;
+}
+
+/* Fix any other potential contrast issues */
+.answer-text {
+    color: #444444 !important;
+    line-height: 1.6;
+}
+
+.title-question {
+    color: #ffffff !important; /* Keep white on dark background */
+}
+
+/* Ensure buttons have sufficient contrast */
+.submit-button {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+}
+
+.submit-button:hover {
+    background-color: #222222 !important;
+}
