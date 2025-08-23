@@ -6,6 +6,7 @@ class FoxTradingApp {
     constructor() {
         this.i18n = null;
         this.detector = null;
+        this.lazyLoader = null;
         this.isInitialized = false;
         this.debug = window.location.hostname === 'localhost' || window.location.search.includes('debug=true');
         
@@ -15,7 +16,8 @@ class FoxTradingApp {
             defaultLanguage: 'en',
             fallbackLanguage: 'en',
             basePath: '/locales/',
-            autoInit: true
+            autoInit: true,
+            enableLazyLoading: true
         };
         
         // Flag emoji mapping
@@ -74,6 +76,11 @@ class FoxTradingApp {
             // Setup form handlers
             this.setupFormHandlers();
 
+            // Initialize lazy loading for performance
+            if (this.config.enableLazyLoading) {
+                this.initializeLazyLoading();
+            }
+
             // Preload other language for better UX
             this.preloadLanguages();
 
@@ -130,22 +137,54 @@ class FoxTradingApp {
         // Remove old language selector if exists
         this.removeOldLanguageSelector();
 
-        // Find insertion point (before book call button)
-        const bookCallWrapper = document.querySelector('.book-call-wrapper:not(.is-mobile)');
-        const mobileBookCall = document.querySelector('.book-call-wrapper.is-mobile');
+        // Wait for DOM to be fully ready
+        const createSelectors = () => {
+            // Find insertion points with multiple fallback options
+            const bookCallWrapper = document.querySelector('.book-call-wrapper:not(.is-mobile)') ||
+                                   document.querySelector('.nav-menu') ||
+                                   document.querySelector('.container-nav');
+            
+            const mobileBookCall = document.querySelector('.book-call-wrapper.is-mobile') ||
+                                  document.querySelector('.nav-menu-phone');
 
-        if (bookCallWrapper) {
-            const selector = this.createLanguageSelectorElement('desktop');
-            bookCallWrapper.parentNode.insertBefore(selector, bookCallWrapper);
-        }
+            if (bookCallWrapper) {
+                const selector = this.createLanguageSelectorElement('desktop');
+                if (bookCallWrapper.classList.contains('nav-menu') || bookCallWrapper.classList.contains('container-nav')) {
+                    bookCallWrapper.appendChild(selector);
+                } else {
+                    bookCallWrapper.parentNode.insertBefore(selector, bookCallWrapper);
+                }
+                this.log('Desktop language selector created');
+            } else {
+                this.log('Warning: Could not find desktop insertion point');
+            }
 
-        if (mobileBookCall) {
-            const selector = this.createLanguageSelectorElement('mobile');
-            mobileBookCall.parentNode.insertBefore(selector, mobileBookCall);
-        }
+            if (mobileBookCall) {
+                const selector = this.createLanguageSelectorElement('mobile');
+                if (mobileBookCall.classList.contains('nav-menu-phone')) {
+                    mobileBookCall.appendChild(selector);
+                } else {
+                    mobileBookCall.parentNode.insertBefore(selector, mobileBookCall);
+                }
+                this.log('Mobile language selector created');
+            } else {
+                this.log('Warning: Could not find mobile insertion point');
+            }
 
-        // Update initial display
-        this.updateLanguageDisplay();
+            // Update initial display
+            this.updateLanguageDisplay();
+        };
+
+        // Try immediately, then with delays if needed
+        createSelectors();
+        
+        // Fallback: try again after a short delay if selectors weren't created
+        setTimeout(() => {
+            if (!document.querySelector('.language-selector')) {
+                this.log('Retrying language selector creation...');
+                createSelectors();
+            }
+        }, 100);
     }
 
     /**
@@ -508,6 +547,25 @@ class FoxTradingApp {
     }
 
     /**
+     * Initialize lazy loading system
+     */
+    initializeLazyLoading() {
+        try {
+            this.log('Initializing lazy loading system...');
+            
+            this.lazyLoader = new LazyLoader({
+                debug: this.debug
+            });
+            
+            this.lazyLoader.init();
+            
+        } catch (error) {
+            console.error('Failed to initialize lazy loading:', error);
+            // Continue without lazy loading
+        }
+    }
+
+    /**
      * Get debug information
      */
     getDebugInfo() {
@@ -516,7 +574,8 @@ class FoxTradingApp {
             currentLanguage: this.i18n ? this.i18n.getCurrentLanguage() : null,
             supportedLanguages: this.config.supportedLanguages,
             detectorInfo: this.detector ? this.detector.getDebugInfo() : null,
-            i18nStats: this.i18n ? this.i18n.getCacheStats() : null
+            i18nStats: this.i18n ? this.i18n.getCacheStats() : null,
+            lazyLoaderStats: this.lazyLoader ? this.lazyLoader.getPerformanceStats() : null
         };
     }
 
