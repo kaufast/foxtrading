@@ -323,7 +323,7 @@ window.addEventListener('languageChanged', (e) => {
 
 ## 📜 License
 
-This project is based on a Webflow template. Please ensure you have the appropriate license for commercial use.
+This project is based on a web template with custom development and enhancements.
 
 ## 🆘 Support
 
