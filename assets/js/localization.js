@@ -88,8 +88,8 @@ class LocalizationManager {
             },
             "about": {
                 "label": "ABOUT US",
-                "title": "At Terravia, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces.",
-                "description": "From concept to completion, we blend creativity, functionality, and precision in every project. At Terravia, your space isn't just built — it's thoughtfully crafted to inspire, impress, and endure.",
+                "title": "At Foxtrading, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces.",
+                "description": "From concept to completion, we blend creativity, functionality, and precision in every project. At Foxtrading, your space isn't just built — it's thoughtfully crafted to inspire, impress, and endure.",
                 "established": "Established for",
                 "workAcross": "Work across",
                 "over": "Over",
@@ -116,8 +116,8 @@ class LocalizationManager {
             },
             "about": {
                 "label": "ACERCA DE NOSOTROS",
-                "title": "En Terravia, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes.",
-                "description": "Desde el concepto hasta la finalización, combinamos creatividad, funcionalidad y precisión en cada proyecto. En Terravia, tu espacio no solo se construye, se elabora cuidadosamente para inspirar, impresionar y perdurar.",
+                "title": "En Foxtrading, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes.",
+                "description": "Desde el concepto hasta la finalización, combinamos creatividad, funcionalidad y precisión en cada proyecto. En Foxtrading, tu espacio no solo se construye, se elabora cuidadosamente para inspirar, impresionar y perdurar.",
                 "established": "Establecidos desde hace",
                 "workAcross": "Trabajamos en",
                 "over": "Más de",
