@@ -1,0 +1,177 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "project": "Proyectos",
+    "testimonial": "Testimonios",
+    "team": "Equipo",
+    "faq": "Preguntas Frecuentes",
+    "bookCall": "Agendar llamada"
+  },
+  "hero": {
+    "title": "¡Hagamos realidad el edificio de tus sueños!",
+    "subtitle": "Nuestro equipo especializado ofrece soluciones personalizadas para todas tus necesidades de construcción. ¡Obtén el apoyo que necesitas hoy!",
+    "toolsPartners": "Herramientas y renderizado que utilizamos"
+  },
+  "about": {
+    "label": "ACERCA DE NOSOTROS",
+    "title": "En Terravia, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes. Ya sea que sueñes con una residencia encantadora o un ambiente de oficina elegante, estamos aquí para dar vida a tus ideas.",
+    "description": "Desde el concepto hasta la finalización, combinamos creatividad, funcionalidad y precisión en cada proyecto. En Terravia, tu espacio no solo se construye, se elabora cuidadosamente para inspirar, impresionar y perdurar.",
+    "established": "Establecidos desde hace",
+    "workAcross": "Trabajamos en",
+    "over": "Más de",
+    "years": "Años",
+    "countries": "Países",
+    "projects": "Proyectos"
+  },
+  "services": {
+    "ecoFriendly": {
+      "title": "1. Construcción ecológica",
+      "description": "Construyendo un futuro mejor con materiales sostenibles, diseños energéticamente eficientes y prácticas ambientalmente conscientes, sin comprometer el estilo o la comodidad.",
+      "fact": "¿Sabías que usar bambú como material de construcción puede reducir las emisiones de construcción hasta en un 80% comparado con la madera tradicional?",
+      "stat1": "40%",
+      "stat1Label": "Emisiones globales de carbono",
+      "stat2": "30%",
+      "stat2Label": "Reducción por construcción ecológica"
+    },
+    "sustainable": {
+      "title": "2. Diseños de vida sostenible",
+      "description": "Creando espacios que apoyan un estilo de vida más verde, desde diseños inteligentes e iluminación natural hasta soluciones energéticamente eficientes que reducen tu huella y mejoran la vida diaria.",
+      "fact": "¡Las casas diseñadas con iluminación natural óptima pueden reducir el uso de electricidad hasta en un 75% durante las horas del día y mejorar tu estado de ánimo!",
+      "stat1": "40%",
+      "stat1Label": "Menores costos de energía doméstica anualmente"
+    },
+    "greenHome": {
+      "title": "3. Soluciones para hogares verdes",
+      "description": "Integrando tecnologías y materiales eco-conscientes para crear hogares que son energéticamente eficientes, rentables y amables con el medio ambiente, sin sacrificar comodidad o estilo.",
+      "fact": "¡Instalar un techo verde puede extender la vida útil de tu techo al doble mientras enfría naturalmente tu hogar y reduce el calor urbano!",
+      "stat1": "40%",
+      "stat1Label": "En EUA, los hogares verdes pueden reducir el uso de energía"
+    },
+    "ecoConscious": {
+      "title": "4. Arquitectura eco-consciente",
+      "description": "Combinando diseño innovador con responsabilidad ambiental para crear estructuras que armonizan con la naturaleza, minimizan el impacto y promueven la sostenibilidad a largo plazo.",
+      "fact": "¡Las civilizaciones antiguas como los griegos y egipcios orientaban sus edificios para maximizar la luz natural y la ventilación!",
+      "stat1": "70%",
+      "stat1Label": "Reduce la huella de carbono operacional de un edificio"
+    }
+  },
+  "projects": {
+    "label": "NUESTRO PROYECTO",
+    "title": "Construido ligero, construido bien. Nuestro portafolio refleja una visión de diseño atemporal y construcción responsable.",
+    "project1": {
+      "title": "Casa Eco-Urbana de Alaia",
+      "description": "Una residencia minimalista en la ladera con sala de estar de planta abierta, vidrio del piso al techo y materiales sostenibles en todo. Esta construcción personalizada se completó en seis meses, a tiempo y dentro del presupuesto.",
+      "totalArea": "Área total",
+      "totalRoom": "Total de habitaciones",
+      "dateOfBuild": "Fecha de construcción",
+      "area": "745 m²",
+      "rooms": "6 habitaciones",
+      "date": "Ago, 2025"
+    },
+    "project2": {
+      "title": "Loft Mono Studio",
+      "description": "Líneas arquitectónicas limpias, muebles empotrados y texturas naturales definen el espacio, diseñado para un joven profesional creativo que prioriza la sostenibilidad y la simplicidad.",
+      "area": "326 m²",
+      "rooms": "3 habitaciones",
+      "date": "Mar, 2025"
+    },
+    "project3": {
+      "title": "Casa Luma",
+      "description": "Casa Luma abraza el minimalismo con una paleta de materiales crudos y una fuerte conexión con la naturaleza. El acristalamiento del piso al techo trae el exterior al interior, mientras que el diseño solar pasivo reduce las necesidades de energía.",
+      "area": "618 m²",
+      "rooms": "5 habitaciones",
+      "date": "Ene, 2025"
+    },
+    "sustainableLiving": "Diseños de vida sostenible",
+    "greenHomeSolutions": "Soluciones para hogares verdes",
+    "ecoFriendlyConstruction": "Construcción ecológica",
+    "ecoConsciousArchitecture": "Arquitectura eco-consciente"
+  },
+  "testimonials": {
+    "label": "Testimonios",
+    "title": "Escucha las voces de los espacios que hemos construido",
+    "testimonial1": {
+      "text": "El equipo de Terravia tradujo nuestra visión en un espacio de trabajo que se siente abierto, intencional y vivo. El diseño minimalista no es solo estético, es productivo, inspirador y construido para la sostenibilidad.",
+      "author": "Anna de la Vega, Propietaria de Tiga Café"
+    },
+    "testimonial2": {
+      "text": "Quedamos impresionados por la claridad de su proceso de diseño. Necesitábamos un espacio comercial que reflejara los valores de nuestra marca: calma, limpieza y consciencia. Terravia dio vida a esa visión sin compromisos.",
+      "author": "Marcus T, Director Creativo en Mono Studio"
+    },
+    "testimonial3": {
+      "text": "Trabajar con Terravia fue sin esfuerzo. Realmente entendieron nuestro deseo de un espacio tranquilo y funcional que respetara el medio ambiente. Cada detalle, desde los materiales naturales hasta el diseño de energía pasiva, refleja nuestros valores.",
+      "author": "Emily R, Propietaria de Casa Luma"
+    }
+  },
+  "team": {
+    "label": "Equipo principal",
+    "title": "En Terravia, nuestro apasionado equipo de arquitectos y diseñadores está dedicado a convertir tus visiones en espacios impresionantes.",
+    "member1": {
+      "name": "Isabella García",
+      "position": "CEO y COO",
+      "description": "Isabella García impulsa el crecimiento y rendimiento de Terravia como CEO y COO. Su visión combina perspicacia empresarial con una profunda apreciación por el diseño impactante."
+    },
+    "member2": {
+      "name": "Irish Conklin",
+      "position": "Directora Creativa",
+      "description": "Con pasión por el diseño con propósito, Irish lidera la dirección creativa de ArchVision a través de una lente de minimalismo, sostenibilidad e innovación silenciosa."
+    },
+    "member3": {
+      "name": "Seraphina Romeny",
+      "position": "Jefa de Marketing",
+      "description": "Como Jefa de Marketing, Seraphina Romeny da forma a la presencia de marca de ArchVision con un ojo agudo para la narrativa, estrategia y alineación de diseño."
+    },
+    "member4": {
+      "name": "Celine Rawles",
+      "position": "Recursos Humanos",
+      "description": "Con una mentalidad centrada en las personas, Celine asegura que los valores de la empresa se reflejen en cada aspecto de la experiencia del empleado, desde el reclutamiento hasta el desarrollo."
+    }
+  },
+  "faq": {
+    "label": "PREGUNTAS FRECUENTES",
+    "q1": {
+      "question": "¿Trabajan en renovaciones o solo en construcciones nuevas?",
+      "answer": "Hacemos ambas. De hecho, a menudo encontramos que las renovaciones ofrecen oportunidades únicas para mezclar el carácter existente con el diseño moderno y sostenible. Ya sea reimaginando un espacio anticuado o extendiendo una estructura con un impacto mínimo, llevamos la misma precisión y filosofía a cada proyecto, nuevo o antiguo."
+    },
+    "q2": {
+      "question": "¿Ofrecen servicios tanto de diseño como de construcción?",
+      "answer": "Sí, ofrecemos servicios tanto de diseño como de construcción. Esto nos permite gestionar tu proyecto de principio a fin, asegurando una transición fluida desde la fase de planificación hasta la construcción final. Nuestro equipo trabaja colaborativamente para mantener la consistencia, calidad y comunicación clara durante todo el proceso."
+    },
+    "q3": {
+      "question": "¿En qué tipos de proyectos se especializa Terravia?",
+      "answer": "Terravia se especializa en una amplia gama de proyectos, incluyendo desarrollos residenciales, comerciales y de uso mixto. Tenemos experiencia particular en diseño moderno y funcional que equilibra el atractivo estético con soluciones prácticas. Ya sean casas privadas, espacios de oficina, ambientes de venta al por menor o desarrollos a gran escala."
+    },
+    "q4": {
+      "question": "¿Cómo incorpora Terravia la sostenibilidad en sus diseños?",
+      "answer": "En Terravia, la sostenibilidad es una parte fundamental de nuestro enfoque de diseño. Priorizamos soluciones energéticamente eficientes, materiales ecológicos y prácticas de construcción inteligentes para reducir el impacto ambiental mientras mejoramos el valor a largo plazo para nuestros clientes."
+    }
+  },
+  "footer": {
+    "changelog": "Registro de cambios",
+    "styleGuide": "Guía de estilo",
+    "licence": "Licencia",
+    "rights": "Todos los derechos reservados."
+  },
+  "form": {
+    "yourName": "Tu nombre",
+    "enterName": "Ingresa tu nombre",
+    "emailAddress": "Correo electrónico",
+    "enterEmail": "Ingresa tu correo",
+    "service": "Servicio",
+    "selectService": "Selecciona servicio",
+    "aboutProject": "Acerca del proyecto",
+    "writeMessage": "Escribe algo...",
+    "submit": "Enviar",
+    "termsText": "Al procesar, aceptas nuestros",
+    "termsLink": "Términos y Condiciones",
+    "success": "¡Exitoso!",
+    "successMessage": "¡Gracias! Hemos recibido tu información. Alguien de nuestro equipo se pondrá en contacto pronto.",
+    "error": "¡Ups! Algo salió mal al enviar el formulario."
+  },
+  "founder": {
+    "name": "Eric Winston",
+    "position": "Director de Construcción"
+  }
+}

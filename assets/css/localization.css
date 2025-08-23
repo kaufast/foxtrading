@@ -1,0 +1,143 @@
+/* Language Selector Styles */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.lang-dropdown {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    min-width: 140px;
+}
+
+.lang-dropdown:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lang-dropdown:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.lang-dropdown option {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 8px;
+}
+
+/* Light mode styles when scrolled */
+.container-nav.is-scroll .lang-dropdown {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    color: #333333;
+}
+
+.container-nav.is-scroll .lang-dropdown:hover {
+    background: #eeeeee;
+    border-color: #d0d0d0;
+}
+
+.container-nav.is-scroll .lang-dropdown:focus {
+    background: #ffffff;
+    border-color: #333333;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.container-nav.is-scroll .lang-dropdown option {
+    background: #ffffff;
+    color: #333333;
+}
+
+/* Mobile menu styles */
+.nav-menu-phone .language-selector {
+    margin: 20px;
+    justify-content: center;
+}
+
+.nav-menu-phone .lang-dropdown {
+    width: 100%;
+    max-width: 200px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #333333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+    .language-selector {
+        margin-right: 15px;
+    }
+    
+    .lang-dropdown {
+        min-width: 120px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar .language-selector {
+        display: none;
+    }
+    
+    .nav-menu-phone .language-selector {
+        display: flex;
+    }
+}
+
+/* Animation for language change */
+[data-i18n] {
+    transition: opacity 0.2s ease;
+}
+
+.language-changing [data-i18n] {
+    opacity: 0.7;
+}
+
+/* Flag icons in dropdown */
+.lang-dropdown option::before {
+    margin-right: 8px;
+}
+
+/* Accessibility improvements */
+.lang-dropdown:focus-visible {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Loading state */
+.lang-dropdown.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.lang-dropdown.loading::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
