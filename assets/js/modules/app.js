@@ -70,6 +70,9 @@ class FoxTradingApp {
             // Initialize i18n
             await this.i18n.init();
 
+            // Add translation attributes to HTML
+            this.addTranslationAttributes();
+
             // Create and setup language selector
             this.createLanguageSelector();
 
@@ -207,12 +210,27 @@ class FoxTradingApp {
             select.appendChild(option);
         });
 
-        // Add event listener
-        select.addEventListener('change', (e) => {
-            this.handleLanguageChange(e.target.value, 'manual');
+        // Set current language
+        if (this.i18n) {
+            select.value = this.i18n.getCurrentLanguage();
+        }
+
+        // Add event listener with proper binding
+        const handleChange = (e) => {
+            e.preventDefault();
+            const newLanguage = e.target.value;
+            this.log(`Language selector changed to: ${newLanguage}`);
+            this.handleLanguageChange(newLanguage, 'manual');
+        };
+
+        select.addEventListener('change', handleChange);
+        select.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
 
         container.appendChild(select);
+        
+        this.log(`Created ${type} language selector with options:`, this.config.supportedLanguages);
         return container;
     }
 
@@ -231,11 +249,28 @@ class FoxTradingApp {
         try {
             this.log(`Changing language to ${newLanguage} via ${method}`);
             
+            if (!this.isInitialized) {
+                this.log('App not initialized yet, skipping language change');
+                return;
+            }
+
+            if (!this.config.supportedLanguages.includes(newLanguage)) {
+                this.log(`Unsupported language: ${newLanguage}`);
+                return;
+            }
+
             // Store user preference
-            this.detector.setLanguagePreference(newLanguage);
+            if (this.detector) {
+                this.detector.setLanguagePreference(newLanguage);
+            }
             
             // Change language in i18n system
-            await this.i18n.setLanguage(newLanguage);
+            if (this.i18n) {
+                await this.i18n.setLanguage(newLanguage);
+                this.log(`Language changed successfully to ${newLanguage}`);
+            } else {
+                this.log('i18n system not available');
+            }
             
         } catch (error) {
             console.error('Error changing language:', error);
@@ -547,20 +582,97 @@ class FoxTradingApp {
     }
 
     /**
+     * Add translation attributes to HTML elements
+     */
+    addTranslationAttributes() {
+        try {
+            this.log('Adding translation attributes to HTML elements...');
+
+            // Navigation links
+            const navSelectors = [
+                { selector: 'a[href="#hero-section"]', key: 'nav.home' },
+                { selector: 'a[href="#about-section"]', key: 'nav.about' },
+                { selector: 'a[href="#service-section"]', key: 'nav.services' },
+                { selector: 'a[href="#project-section"]', key: 'nav.project' },
+                { selector: 'a[href="#testimonial-section"]', key: 'nav.testimonial' },
+                { selector: 'a[href="#team-section"]', key: 'nav.team' },
+                { selector: 'a[href="#faq-section"]', key: 'nav.faq' }
+            ];
+
+            navSelectors.forEach(({selector, key}) => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => el.setAttribute('data-i18n', key));
+            });
+
+            // Hero section
+            const heroTitle = document.querySelector('.hero-titile-text');
+            if (heroTitle) heroTitle.setAttribute('data-i18n', 'hero.title');
+
+            const heroSubtitle = document.querySelector('.hero-sub-title');
+            if (heroSubtitle) heroSubtitle.setAttribute('data-i18n', 'hero.subtitle');
+
+            const brandTitle = document.querySelector('.brand-partner-title');
+            if (brandTitle) brandTitle.setAttribute('data-i18n', 'hero.toolsPartners');
+
+            // About section
+            const aboutLabel = document.querySelector('#about-section .sub-label-section');
+            if (aboutLabel) aboutLabel.setAttribute('data-i18n', 'about.label');
+
+            const aboutTitle = document.querySelector('.title-about-us');
+            if (aboutTitle) aboutTitle.setAttribute('data-i18n', 'about.title');
+
+            const aboutDesc = document.querySelector('.desription-about-us');
+            if (aboutDesc) aboutDesc.setAttribute('data-i18n', 'about.description');
+
+            // About stats
+            const stats = [
+                { selector: '.amount-categoty', keys: ['about.established', 'about.workAcross', 'about.over'] },
+                { selector: '.amount-type', keys: ['about.years', 'about.countries', 'about.projects'] }
+            ];
+
+            stats.forEach(({selector, keys}) => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach((el, index) => {
+                    if (keys[index]) {
+                        el.setAttribute('data-i18n', keys[index]);
+                    }
+                });
+            });
+
+            // Book a call buttons
+            const bookCallButtons = document.querySelectorAll('.button-book-a-call div');
+            bookCallButtons.forEach(btn => btn.setAttribute('data-i18n', 'nav.bookCall'));
+
+            this.log('Translation attributes added successfully');
+
+        } catch (error) {
+            console.error('Error adding translation attributes:', error);
+        }
+    }
+
+    /**
      * Initialize lazy loading system
      */
     initializeLazyLoading() {
         try {
             this.log('Initializing lazy loading system...');
             
+            // Check if LazyLoader is available
+            if (typeof LazyLoader === 'undefined') {
+                this.log('LazyLoader not available, skipping lazy loading initialization');
+                return;
+            }
+            
             this.lazyLoader = new LazyLoader({
                 debug: this.debug
             });
             
             this.lazyLoader.init();
+            this.log('Lazy loading initialized successfully');
             
         } catch (error) {
             console.error('Failed to initialize lazy loading:', error);
+            this.log('Continuing without lazy loading...');
             // Continue without lazy loading
         }
     }
