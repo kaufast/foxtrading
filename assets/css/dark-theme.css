@@ -1,0 +1,170 @@
+/* Dark Graphite Theme - Background Override */
+
+/* Main body and root background */
+body,
+html {
+    background-color: #0E0E0B !important;
+    background: #0E0E0B !important;
+}
+
+/* All major sections */
+section,
+.hero-section,
+.about-us-section,
+.service-section,
+.project-section,
+.testimonial-section,
+.team-section,
+.footer-section,
+.navbar-wrapper,
+.container,
+.w-container {
+    background-color: transparent !important;
+}
+
+/* Ensure proper text contrast on dark background */
+body {
+    color: #ffffff;
+}
+
+/* Navigation adjustments for dark theme */
+.navbar {
+    background-color: rgba(14, 14, 11, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover {
+    color: #cccccc !important;
+}
+
+/* Hero section text visibility */
+.hero-titile-text,
+.hero-sub-title {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure good contrast for content sections */
+.title-section,
+.sub-label-section,
+.paragraph-body-3,
+.title-about-us,
+.desription-about-us,
+.amount-categoty,
+.amount-text,
+.amount-type {
+    color: #ffffff !important;
+}
+
+/* Project cards and content */
+.project-item,
+.project-card-header,
+.title-project,
+.description-project {
+    color: #ffffff !important;
+}
+
+.project-type-text,
+.title-spesification,
+.value-spesification {
+    color: #ffffff !important;
+}
+
+/* Team section */
+.team-name,
+.team-position,
+.team-description {
+    color: #ffffff !important;
+}
+
+/* FAQ section - ensure white text on dark background */
+.title-question,
+.answer-text {
+    color: #ffffff !important;
+}
+
+/* Footer adjustments */
+.footer-section {
+    background-color: #0E0E0B !important;
+}
+
+.footer-link,
+.copyright-footer {
+    color: #ffffff !important;
+}
+
+.footer-link:hover {
+    color: #cccccc !important;
+}
+
+/* Testimonials - adjust for readability */
+.testimonial-text,
+.testimonial-name {
+    color: #333333 !important; /* Keep dark text on light testimonial cards */
+}
+
+/* Language selector adjustments for dark theme */
+.lang-dropdown {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+.lang-dropdown:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Book a call button adjustments */
+.button-book-a-call {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.founder,
+.position {
+    color: #ffffff !important;
+}
+
+/* Service section specific adjustments */
+.benefit-title,
+.benefit-desc {
+    color: #ffffff !important;
+}
+
+/* Override any conflicting styles */
+* {
+    box-sizing: border-box;
+}
+
+/* Ensure modals and overlays work with dark theme */
+.modal-container {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+/* Form elements for dark theme */
+.input-field,
+.field-label {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.submit-button {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* Mobile menu adjustments */
+.nav-menu-phone {
+    background-color: #0E0E0B !important;
+}
+
+.nav-menu-phone .nav-link {
+    color: #ffffff !important;
+}
