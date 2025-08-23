@@ -4,6 +4,7 @@
     align-items: center;
     margin-right: 20px;
     position: relative;
+    z-index: 999;
 }
 
 .language-selector.mobile {
@@ -29,6 +30,9 @@
     background-repeat: no-repeat;
     background-position: right 8px center;
     background-size: 16px;
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto;
 }
 
 .lang-dropdown:hover {

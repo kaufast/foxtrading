@@ -210,11 +210,13 @@ class FoxTradingApp {
     createLanguageSelectorElement(type) {
         const container = document.createElement('div');
         container.className = `language-selector ${type === 'mobile' ? 'mobile' : 'desktop'}`;
+        container.style.cssText = 'position: relative; z-index: 9999; pointer-events: auto;';
         
         const select = document.createElement('select');
         select.id = type === 'mobile' ? 'language-dropdown-mobile' : 'language-dropdown';
         select.className = 'lang-dropdown';
         select.setAttribute('aria-label', 'Select Language');
+        select.style.cssText = 'position: relative; z-index: 10000; pointer-events: auto; display: block;';
 
         // Add options
         this.config.supportedLanguages.forEach(lang => {
@@ -229,31 +231,37 @@ class FoxTradingApp {
             select.value = this.i18n.getCurrentLanguage();
         }
 
-        // Add event listener with proper binding
-        const handleChange = (e) => {
-            console.log('🎯 Language selector changed!', e.target.value);
-            e.preventDefault();
-            e.stopPropagation();
-            const newLanguage = e.target.value;
-            this.log(`Language selector changed to: ${newLanguage}`);
-            this.handleLanguageChange(newLanguage, 'manual');
+        // Direct event handling
+        const handleChange = (event) => {
+            console.log('🎯 Language selector CHANGE event!', event.target.value);
+            const newLanguage = event.target.value;
+            if (newLanguage && newLanguage !== this.i18n?.getCurrentLanguage()) {
+                this.log(`Language selector changed to: ${newLanguage}`);
+                // Use timeout to ensure DOM is ready
+                setTimeout(() => {
+                    this.handleLanguageChange(newLanguage, 'manual');
+                }, 10);
+            }
         };
-
-        const handleClick = (e) => {
-            console.log('🎯 Language selector clicked!', e);
-            e.stopPropagation();
-        };
-
-        select.addEventListener('change', handleChange);
-        select.addEventListener('click', handleClick);
         
-        // Also add focus and mousedown events for better debugging
-        select.addEventListener('focus', () => console.log('🎯 Language selector focused'));
-        select.addEventListener('mousedown', () => console.log('🎯 Language selector mousedown'));
+        // Add multiple event listeners for reliability
+        select.onchange = handleChange;
+        select.addEventListener('change', handleChange);
+        select.addEventListener('input', handleChange);
+        
+        // Debug events
+        select.addEventListener('click', (e) => {
+            console.log('🎯 Language selector CLICKED!', e);
+        });
+        select.addEventListener('focus', () => console.log('🎯 Language selector FOCUSED'));
+        select.addEventListener('mousedown', (e) => {
+            console.log('🎯 Language selector MOUSEDOWN', e);
+        });
 
         container.appendChild(select);
         
         this.log(`Created ${type} language selector with options:`, this.config.supportedLanguages);
+        console.log('🎯 Language selector element:', container);
         return container;
     }
 
