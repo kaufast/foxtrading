@@ -1,8 +1,11 @@
 {
   "nav": {
+    "home": "Home",
     "about": "About",
     "services": "Services",
     "project": "Project",
+    "team": "Core team",
+    "testimonial": "Testimonials",
     "faq": "FAQs",
     "bookCall": "Book a call"
   },

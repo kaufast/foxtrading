@@ -12,9 +12,9 @@ class FoxTradingApp {
         
         // Configuration
         this.config = {
-            supportedLanguages: ['en', 'es-MX'],
-            defaultLanguage: 'en',
-            fallbackLanguage: 'en',
+            supportedLanguages: ['en-GB', 'es-MX'],
+            defaultLanguage: 'en-GB',
+            fallbackLanguage: 'en-GB',
             basePath: '/locales/',
             autoInit: true,
             enableLazyLoading: true
@@ -22,13 +22,13 @@ class FoxTradingApp {
         
         // Flag emoji mapping
         this.flags = {
-            'en': '🇬🇧',
+            'en-GB': '🇬🇧',
             'es-MX': '🇲🇽'
         };
         
         // Language names
         this.languageNames = {
-            'en': 'English (UK)',
+            'en-GB': 'English (UK)',
             'es-MX': 'Español (México)'
         };
     }
