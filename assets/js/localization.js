@@ -78,7 +78,6 @@ class LocalizationManager {
                 "services": "Services",
                 "project": "Project",
                 "testimonial": "Testimonial",
-                "team": "Core team",
                 "faq": "FAQs",
                 "bookCall": "Book a call"
             },
