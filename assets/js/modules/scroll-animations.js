@@ -168,12 +168,13 @@ class ScrollAnimations {
                 counters.forEach(counter => {
                     const element = document.querySelector(counter.element);
                     if (element) {
-                        gsap.from({ value: 0 }, {
-                            value: counter.target,
+                        gsap.to(element, {
+                            textContent: counter.target,
                             duration: 2,
                             ease: "power2.out",
-                            onUpdate: function() {
-                                element.textContent = Math.round(this.targets()[0].value);
+                            snap: { textContent: 1 },
+                            onStart: function() {
+                                element.textContent = 0;
                             }
                         });
                     }

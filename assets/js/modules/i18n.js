@@ -4,10 +4,10 @@
  */
 class I18n {
     constructor(options = {}) {
-        this.currentLanguage = options.defaultLanguage || 'en';
-        this.fallbackLanguage = options.fallbackLanguage || 'en';
+        this.currentLanguage = options.defaultLanguage || 'en-GB'; // ✅ FIXED
+        this.fallbackLanguage = options.fallbackLanguage || 'en-GB'; // ✅ FIXED
         this.translations = {};
-        this.supportedLanguages = options.supportedLanguages || ['en', 'es-MX'];
+        this.supportedLanguages = options.supportedLanguages || ['en-GB', 'es-MX']; // ✅ FIXED
         this.basePath = options.basePath || '/locales/';
         this.cache = new Map();
         this.interpolationRegex = /\{\{([^}]+)\}\}/g;

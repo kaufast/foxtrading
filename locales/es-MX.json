@@ -1,12 +1,10 @@
 {
   "nav": {
-    "home": "Inicio",
     "about": "Nosotros",
     "services": "Servicios",
     "project": "Proyectos",
-    "testimonial": "Testimonios",
     "team": "Equipo",
-    "faq": "Preguntas Frecuentes",
+    "faq": "FAQ",
     "bookCall": "Agendar llamada"
   },
   "hero": {
@@ -26,69 +24,107 @@
     "projects": "Proyectos"
   },
   "services": {
-    "label": "SERVICIOS",
+    "label": "PRODUCTOS",
     "ecoFriendly": {
-      "title": "1. Construcción ecológica",
-      "description": "Construyendo un futuro mejor con materiales sostenibles, diseños energéticamente eficientes y prácticas ambientalmente conscientes, sin comprometer el estilo o la comodidad.",
-      "fact": "¿Sabías que usar bambú como material de construcción puede reducir las emisiones de construcción hasta en un 80% comparado con la madera tradicional?",
-      "stat1": "40%",
-      "stat1Label": "Emisiones globales de carbono",
-      "stat2": "30%",
-      "stat2Label": "Reducción por construcción ecológica"
+      "title": "1. Nueces y Semillas Premium",
+      "description": "Nueces de alta calidad incluyendo pecanas, macadamias y otras variedades premium. Obtenidas de productores certificados y procesadas para mantener la frescura y valor nutricional.",
+      "fact": "Las nueces premium como las macadamias contienen más del 75% de grasas monoinsaturadas saludables y están entre las nueces de árbol más valiosas en el comercio internacional.",
+      "stat1": "15+",
+      "stat1Label": "Países de origen",
+      "stat2": "50+",
+      "stat2Label": "Variedades de nueces premium"
     },
     "sustainable": {
-      "title": "2. Diseños de vida sostenible",
-      "description": "Creando espacios que apoyan un estilo de vida más verde, desde diseños inteligentes e iluminación natural hasta soluciones energéticamente eficientes que reducen tu huella y mejoran la vida diaria.",
-      "fact": "¡Las casas diseñadas con iluminación natural óptima pueden reducir el uso de electricidad hasta en un 75% durante las horas del día y mejorar tu estado de ánimo!",
-      "stat1": "40%",
-      "stat1Label": "Menores costos de energía doméstica anualmente"
+      "title": "2. Cítricos y Frutas Tropicales Frescas",
+      "description": "Frutas cítricas premium incluyendo limones, limas y naranjas, además de frutas tropicales exóticas como mango, papaya y pitaya. Cuidadosamente seleccionadas y empacadas para frescura óptima.",
+      "fact": "¡México es el mayor productor mundial de aguacate, representando más del 30% de la producción global, y produce frutas cítricas premium todo el año!",
+      "stat1": "12+",
+      "stat1Label": "Variedades de frutas tropicales disponibles"
     },
     "greenHome": {
-      "title": "3. Soluciones para hogares verdes",
-      "description": "Integrando tecnologías y materiales eco-conscientes para crear hogares que son energéticamente eficientes, rentables y amables con el medio ambiente, sin sacrificar comodidad o estilo.",
-      "fact": "¡Instalar un techo verde puede extender la vida útil de tu techo al doble mientras enfría naturalmente tu hogar y reduce el calor urbano!",
-      "stat1": "40%",
-      "stat1Label": "En EUA, los hogares verdes pueden reducir el uso de energía"
+      "title": "3. Bayas y Vegetales Premium",
+      "description": "Bayas frescas incluyendo fresas, frambuesas y moras azules, además de vegetales premium como jitomates y guayaba. Cosechados en su punto óptimo de maduración para máximo sabor y nutrición.",
+      "fact": "¡Las bayas y vegetales mexicanos se benefician de condiciones de cultivo ideales y técnicas agrícolas avanzadas, asegurando disponibilidad todo el año!",
+      "stat1": "8+",
+      "stat1Label": "Variedades de bayas y vegetales"
     },
     "ecoConscious": {
-      "title": "4. Arquitectura eco-consciente",
-      "description": "Combinando diseño innovador con responsabilidad ambiental para crear estructuras que armonizan con la naturaleza, minimizan el impacto y promueven la sostenibilidad a largo plazo.",
-      "fact": "¡Las civilizaciones antiguas como los griegos y egipcios orientaban sus edificios para maximizar la luz natural y la ventilación!",
-      "stat1": "70%",
-      "stat1Label": "Reduce la huella de carbono operacional de un edificio"
+      "title": "4. Aguacate y Productos Especializados",
+      "description": "Aguacates Hass premium y productos especializados de México. Conocidos por su calidad superior, sabor rico y beneficios nutricionales. Manejados cuidadosamente para asegurar maduración perfecta.",
+      "fact": "¡Los aguacates Hass mexicanos están disponibles todo el año y contienen más de 20 vitaminas y minerales, convirtiéndolos en un superalimento en mercados internacionales!",
+      "stat1": "95%",
+      "stat1Label": "De las importaciones de aguacate de EUA desde México"
     }
   },
   "projects": {
-    "label": "NUESTRO PROYECTO",
-    "title": "Construido ligero, construido bien. Nuestro portafolio refleja una visión de diseño atemporal y construcción responsable.",
+    "label": "NUESTROS PRODUCTOS",
+    "title": "Calidad garantizada, comercio global. Nuestro portafolio refleja un compromiso con la excelencia en el comercio internacional de alimentos.",
     "project1": {
-      "title": "Casa Eco-Urbana de Alaia",
-      "description": "Una residencia minimalista en la ladera con sala de estar de planta abierta, vidrio del piso al techo y materiales sostenibles en todo. Esta construcción personalizada se completó en seis meses, a tiempo y dentro del presupuesto.",
-      "totalArea": "Área total",
-      "totalRoom": "Total de habitaciones",
-      "dateOfBuild": "Fecha de construcción",
-      "area": "745 m²",
-      "rooms": "6 habitaciones",
-      "date": "Ago, 2025"
+      "title": "Alimentos Frescos",
+      "description": "Productos frescos premium incluyendo frutas, verduras y hierbas. Obtenidos directamente de productores confiables y entregados manteniendo la frescura óptima a través de logística de cadena de frío.",
+      "totalArea": "Países de origen",
+      "totalRoom": "Variedades de productos",
+      "dateOfBuild": "Disponibilidad estacional",
+      "area": "15+ países",
+      "rooms": "200+ variedades",
+      "date": "Todo el año"
     },
     "project2": {
-      "title": "Loft Mono Studio",
-      "description": "Líneas arquitectónicas limpias, muebles empotrados y texturas naturales definen el espacio, diseñado para un joven profesional creativo que prioriza la sostenibilidad y la simplicidad.",
-      "area": "326 m²",
-      "rooms": "3 habitaciones",
-      "date": "Mar, 2025"
+      "title": "Alimentos Congelados",
+      "description": "Productos congelados de alta calidad incluyendo verduras, frutas y alimentos preparados. Técnicas avanzadas de congelación preservan el valor nutricional y extienden la vida útil para distribución global.",
+      "area": "12+ países",
+      "rooms": "150+ variedades",
+      "date": "Todo el año"
     },
     "project3": {
-      "title": "Casa Luma",
-      "description": "Casa Luma abraza el minimalismo con una paleta de materiales crudos y una fuerte conexión con la naturaleza. El acristalamiento del piso al techo trae el exterior al interior, mientras que el diseño solar pasivo reduce las necesidades de energía.",
-      "area": "618 m²",
-      "rooms": "5 habitaciones",
-      "date": "Ene, 2025"
+      "title": "Alimentos Asados y Congelados",
+      "description": "Productos asados especializados y alimentos preparados congelados. Técnicas expertas de procesamiento realzan los sabores mientras mantienen estándares de calidad para mercados internacionales.",
+      "area": "10+ países",
+      "rooms": "80+ variedades",
+      "date": "Todo el año"
     },
-    "sustainableLiving": "Diseños de vida sostenible",
-    "greenHomeSolutions": "Soluciones para hogares verdes",
-    "ecoFriendlyConstruction": "Construcción ecológica",
-    "ecoConsciousArchitecture": "Arquitectura eco-consciente"
+    "project4": {
+      "title": "Mezclas",
+      "description": "Mezclas de especias personalizadas, combinaciones de condimentos e ingredientes. Formulaciones creadas con precisión que cumplen requisitos específicos del cliente y preferencias de sabor regional.",
+      "area": "8+ países",
+      "rooms": "100+ mezclas",
+      "date": "Todo el año"
+    },
+    "project5": {
+      "title": "Alimentos Procesados",
+      "description": "Productos procesados de valor agregado incluyendo enlatados, alimentos empacados y artículos listos para comer. Control de calidad estricto asegura consistencia y estándares de seguridad.",
+      "area": "20+ países",
+      "rooms": "300+ productos",
+      "date": "Todo el año"
+    },
+    "project5": {
+      "title": "Destilados y Bebidas Premium",
+      "description": "Bebidas alcohólicas premium incluyendo destilados tradicionales mexicanos, cervezas artesanales, vinos y destilados internacionales. Cuidadosamente seleccionados de destilerías y cervecerías reconocidas mundialmente.",
+      "totalArea": "Países de origen",
+      "totalRoom": "Variedades de productos",
+      "dateOfBuild": "Disponibilidad estacional",
+      "area": "México",
+      "rooms": "30+ productos",
+      "date": "Todo el año"
+    },
+    "project6": {
+      "title": "Productos Ganaderos",
+      "description": "Productos cárnicos premium, lácteos e ingredientes derivados de animales. Obtenidos de proveedores certificados con los más altos estándares de bienestar animal y calidad.",
+      "area": "12+ países",
+      "rooms": "50+ productos",
+      "date": "Todo el año"
+    },
+    "project7": {
+      "title": "Bebidas Alcohólicas",
+      "description": "Bebidas alcohólicas premium incluyendo destilados, licores y bebidas especializadas. Cuidadosamente seleccionadas de destilerías y productores reconocidos mundialmente.",
+      "area": "15+ países",
+      "rooms": "75+ marcas",
+      "date": "Todo el año"
+    },
+    "sustainableLiving": "NUEZ",
+    "greenHomeSolutions": "PECANA",
+    "ecoFriendlyConstruction": "MACADAMIA",
+    "ecoConsciousArchitecture": "AGUACATE"
   },
   "testimonials": {
     "label": "Testimonios",
@@ -115,17 +151,17 @@
       "description": "Isabella García impulsa el crecimiento y rendimiento de Foxtrading como CEO y COO. Su visión combina perspicacia empresarial con una profunda apreciación por el diseño impactante."
     },
     "member2": {
-      "name": "Irish Conklin",
+      "name": "Fresh & Frozen Seafood",
       "position": "Directora Creativa",
       "description": "Con pasión por el diseño con propósito, Irish lidera la dirección creativa de ArchVision a través de una lente de minimalismo, sostenibilidad e innovación silenciosa."
     },
     "member3": {
-      "name": "Seraphina Romeny",
+      "name": "Specialty Meats",
       "position": "Jefa de Marketing",
-      "description": "Como Jefa de Marketing, Seraphina Romeny da forma a la presencia de marca de ArchVision con un ojo agudo para la narrativa, estrategia y alineación de diseño."
+      "description": "Como Jefa de Marketing, Specialty Meats da forma a la presencia de marca de ArchVision con un ojo agudo para la narrativa, estrategia y alineación de diseño."
     },
     "member4": {
-      "name": "Celine Rawles",
+      "name": "Artisanal & Processed Goods",
       "position": "Recursos Humanos",
       "description": "Con una mentalidad centrada en las personas, Celine asegura que los valores de la empresa se reflejen en cada aspecto de la experiencia del empleado, desde el reclutamiento hasta el desarrollo."
     }
@@ -133,20 +169,20 @@
   "faq": {
     "label": "PREGUNTAS FRECUENTES",
     "q1": {
-      "question": "¿Trabajan en renovaciones o solo en construcciones nuevas?",
-      "answer": "Hacemos ambas. De hecho, a menudo encontramos que las renovaciones ofrecen oportunidades únicas para mezclar el carácter existente con el diseño moderno y sostenible. Ya sea reimaginando un espacio anticuado o extendiendo una estructura con un impacto mínimo, llevamos la misma precisión y filosofía a cada proyecto, nuevo o antiguo."
+      "question": "¿Qué tipos de productos mexicanos exportan a Singapur?",
+      "answer": "Exportamos una amplia gama que incluye productos frescos (aguacates, mangos, bayas), frutas y verduras congeladas, carnes y mariscos premium, alimentos especializados como guacamole y salsas, y auténticos destilados mexicanos incluyendo tequila y mezcal. Todos los productos cumplen con los estrictos estándares de importación de Singapur y provienen de proveedores mexicanos certificados."
     },
     "q2": {
-      "question": "¿Ofrecen servicios tanto de diseño como de construcción?",
-      "answer": "Sí, ofrecemos servicios tanto de diseño como de construcción. Esto nos permite gestionar tu proyecto de principio a fin, asegurando una transición fluida desde la fase de planificación hasta la construcción final. Nuestro equipo trabaja colaborativamente para mantener la consistencia, calidad y comunicación clara durante todo el proceso."
+      "question": "¿Cuáles son las cantidades mínimas de pedido y tiempos de entrega?",
+      "answer": "Las cantidades mínimas varían por categoría de producto - típicamente una tarima para productos congelados y negociable para productos frescos. La entrega estándar de México a Singapur es de 3-4 semanas por transporte marítimo, con opciones de transporte aéreo para pedidos urgentes. Consolidamos envíos para optimizar costos para compradores pequeños."
     },
     "q3": {
-      "question": "¿En qué tipos de proyectos se especializa Foxtrading?",
-      "answer": "Foxtrading se especializa en una amplia gama de proyectos, incluyendo desarrollos residenciales, comerciales y de uso mixto. Tenemos experiencia particular en diseño moderno y funcional que equilibra el atractivo estético con soluciones prácticas. Ya sean casas privadas, espacios de oficina, ambientes de venta al por menor o desarrollos a gran escala."
+      "question": "¿Cómo aseguran la calidad del producto durante el envío de larga distancia?",
+      "answer": "Utilizamos logística de cadena de frío de última generación con contenedores con temperatura controlada monitoreados 24/7. Los productos frescos se cosechan en su punto óptimo de maduración, se enfrían inmediatamente y se empacan usando tecnología de atmósfera modificada. Nuestro equipo de control de calidad inspecciona los productos en origen y destino, asegurando que lleguen en perfectas condiciones."
     },
     "q4": {
-      "question": "¿Cómo incorpora Foxtrading la sostenibilidad en sus diseños?",
-      "answer": "En Foxtrading, la sostenibilidad es una parte fundamental de nuestro enfoque de diseño. Priorizamos soluciones energéticamente eficientes, materiales ecológicos y prácticas de construcción inteligentes para reducir el impacto ambiental mientras mejoramos el valor a largo plazo para nuestros clientes."
+      "question": "¿Manejan la documentación de importación y despacho aduanal?",
+      "answer": "Sí, proporcionamos soporte integral incluyendo certificados fitosanitarios, certificados de origen, certificados de salud y toda la documentación requerida por AVA/SFA de Singapur. Nuestro equipo tiene experiencia con las regulaciones de importación de Singapur y puede asistir con el despacho aduanal, aunque los compradores típicamente manejan el despacho final a través de sus agentes designados."
     }
   },
   "footer": {
@@ -172,8 +208,8 @@
     "error": "¡Ups! Algo salió mal al enviar el formulario."
   },
   "founder": {
-    "name": "Eric Winston",
-    "position": "Director de Construcción"
+    "name": "Erick M.",
+    "position": "Especialista en Comercio"
   },
   "meta": {
     "languageName": "Español (México)",
