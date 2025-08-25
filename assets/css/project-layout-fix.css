@@ -1,0 +1,40 @@
+/* Fix Project Cards Layout - Desktop Side-by-Side Display */
+
+/* Desktop and tablet layout - side by side */
+@media screen and (min-width: 768px) {
+    .project-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: stretch !important;
+        gap: 32px !important;
+        padding: 32px !important;
+    }
+
+    .project-image {
+        flex: 0 0 45% !important;
+        width: 45% !important;
+        height: auto !important;
+        max-height: 400px !important;
+        object-fit: cover !important;
+    }
+
+    .project-right-content {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        padding: 0 !important;
+    }
+}
+
+/* Mobile layout - keep stacked */
+@media screen and (max-width: 767px) {
+    .project-item {
+        flex-direction: column !important;
+    }
+    
+    .project-image {
+        width: 100% !important;
+        height: 250px !important;
+    }
+}
