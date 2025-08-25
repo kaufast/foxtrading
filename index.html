@@ -1145,15 +1145,46 @@
     <script>
     class LanguageToggle {
         constructor() {
-            this.currentLanguage = 'en-GB';
-            this.isEnglish = true;
+            // Get current language from existing system
+            this.currentLanguage = this.getCurrentLanguageFromSystem();
+            this.isEnglish = this.currentLanguage === 'en-GB';
             this.init();
+        }
+        
+        getCurrentLanguageFromSystem() {
+            // Try to get current language from various sources
+            if (window.app && window.app.i18n) {
+                return window.app.i18n.getCurrentLanguage() || 'en-GB';
+            }
+            if (window.i18n) {
+                return window.i18n.currentLanguage || 'en-GB';
+            }
+            // Check localStorage
+            const stored = localStorage.getItem('preferredLanguage');
+            if (stored) return stored;
+            
+            // Default to English
+            return 'en-GB';
         }
         
         init() {
             // Initialize both desktop and mobile toggles
             this.initializeToggle('language-toggle-desktop');
             this.initializeToggle('language-toggle-mobile');
+            
+            // Listen for language changes from other parts of the system
+            window.addEventListener('languageChanged', (e) => {
+                this.syncWithCurrentLanguage(e.detail?.current || e.detail?.language);
+            });
+        }
+        
+        syncWithCurrentLanguage(newLang) {
+            if (newLang && newLang !== this.currentLanguage) {
+                this.currentLanguage = newLang;
+                this.isEnglish = newLang === 'en-GB';
+                this.updateToggle('language-toggle-desktop', false);
+                this.updateToggle('language-toggle-mobile', false);
+            }
         }
         
         initializeToggle(containerId) {
@@ -1189,16 +1220,21 @@
             this.updateToggle('language-toggle-desktop');
             this.updateToggle('language-toggle-mobile');
             
-            // Update language
-            if (typeof updateLanguage === 'function') {
-                updateLanguage(newLanguage);
+            // Update language using the existing system
+            if (window.app && typeof window.app.changeLanguage === 'function') {
+                window.app.changeLanguage(newLanguage);
+            } else if (window.i18n && typeof window.i18n.setLanguage === 'function') {
+                window.i18n.setLanguage(newLanguage);
+            } else {
+                // Fallback for manual event dispatch
+                window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: newLanguage } }));
             }
             
             // Update current language
             this.currentLanguage = newLanguage;
         }
         
-        updateToggle(containerId) {
+        updateToggle(containerId, triggerChange = true) {
             const container = document.getElementById(containerId);
             if (!container) return;
             
@@ -1219,10 +1255,20 @@
         }
     }
     
-    // Initialize when DOM is loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        window.languageToggle = new LanguageToggle();
-    });
+    // Initialize when DOM is loaded and app is ready
+    function initLanguageToggle() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initLanguageToggle);
+            return;
+        }
+        
+        // Wait a bit for other scripts to initialize
+        setTimeout(() => {
+            window.languageToggle = new LanguageToggle();
+        }, 100);
+    }
+    
+    initLanguageToggle();
     </script>
 </body>
 </html>

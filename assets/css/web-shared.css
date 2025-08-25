@@ -5586,13 +5586,35 @@ h6 {
   left: auto;
 }
 
-/* Flag backgrounds - UK and Mexico flags as SVG */
+/* Flag backgrounds - Simple emoji flags that will display properly */
 .switch.en {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA2NCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjMDEyMTY5Ii8+Cjxwb2x5Z29uIHBvaW50cz0iMCwwIDI2LjY3LDAgMCwxNiIgZmlsbD0iI0ZGRiIvPgo8cG9seWdvbiBwb2ludHM9IjY0LDAgMzcuMzMsMCA2NCwxNiIgZmlsbD0iI0ZGRiIvPgo8cG9seWdvbiBwb2ludHM9IjAsNDggMjYuNjcsNDggMCwzMiIgZmlsbD0iI0ZGRiIvPgo8cG9seWdvbiBwb2ludHM9IjY0LDQ4IDM3LjMzLDQ4IDY0LDMyIiBmaWxsPSIjRkZGIi8+CjxwYXRoIGQ9Ik0yNS4zMyAwTDAgMTguNjdWNDhMMzguNjcgMEgyNS4zM1oiIGZpbGw9IiNDODEwMkUiLz4KPHN2ZyBjbGFzcz0ic3Qwn3ZncD0KPHBhdGggZD0iTTM4LjY3IDQ4TDY0IDI5LjMzVjBMMjUuMzMgNDhIMzguNjdaIiBmaWxsPSIjQzgxMDJFIi8+Cjwvc3ZnPgo=');
+  background: linear-gradient(135deg, #012169 0%, #012169 33%, white 33%, white 66%, #C8102E 66%);
+  position: relative;
+}
+
+.switch.en::before {
+  content: "🇬🇧";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  line-height: 1;
 }
 
 .switch.es {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA2NCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjQzYwQjFFIi8+CjxyZWN0IHk9IjEyIiB3aWR0aD0iNjQiIGhlaWdodD0iMjQiIGZpbGw9IiNGRkM0MDAiLz4KPC9zdmc+Cg==');
+  background: linear-gradient(to bottom, #C60B1E 0%, #C60B1E 25%, #FFC400 25%, #FFC400 75%, #C60B1E 75%);
+  position: relative;
+}
+
+.switch.es::before {
+  content: "🇲🇽";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* Scrolled navbar styles */
