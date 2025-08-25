@@ -78,7 +78,7 @@
       "totalRoom": "Product varieties",
       "dateOfBuild": "Season availability",
       "area": "Mexico",
-      "rooms": "30+ specialty products",
+      "rooms": "30+ products",
       "date": "Year-round"
     },
     "project3": {
@@ -88,7 +88,7 @@
       "totalRoom": "Product varieties",
       "dateOfBuild": "Season availability",
       "area": "Mexico",
-      "rooms": "30+ processed foods",
+      "rooms": "30+ products",
       "date": "Year-round"
     },
     "project4": {
@@ -97,8 +97,8 @@
       "totalArea": "Origin countries",
       "totalRoom": "Product varieties",
       "dateOfBuild": "Season availability",
-      "area": "Mexico + selected international markets",
-      "rooms": "20+ livestock & seafood products",
+      "area": "Mexico",
+      "rooms": "20+  products",
       "date": "Year-round"
     },
     "project5": {
@@ -125,10 +125,10 @@
       "rooms": "75+ brands",
       "date": "Year-round"
     },
-    "sustainableLiving": "NUT",
+    "sustainableLiving": "AVOCADO",
     "greenHomeSolutions": "PECAN",
     "ecoFriendlyConstruction": "MACADAMIA",
-    "ecoConsciousArchitecture": "AVOCADO"
+    "ecoConsciousArchitecture": "BERRIES"
   },
   "testimonials": {
     "label": "Testimonials",
@@ -213,7 +213,7 @@
   },
   "founder": {
     "name": "Erick M.",
-    "position": "Trade Specialist"
+    "position": "Agent"
   },
  "meta": {
     "languageName": "English (UK)",
