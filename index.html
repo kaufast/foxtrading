@@ -113,7 +113,7 @@
                     <img loading="lazy" src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003a_Frame%202147223887.svg" alt="Menu toggle" class="image-menu-toggle" data-original-srcset="" srcset="">
                     <img loading="lazy" src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003b_Frame%202147223888.svg" alt="Close menu" class="close-icon" data-original-srcset="" srcset="">
                 </div>
-                <div class="language-selector desktop" style="position: relative; z-index: 9999; pointer-events: auto;"><select id="language-dropdown" class="lang-dropdown" aria-label="Select Language" style="position: relative; z-index: 10000; pointer-events: auto; display: block;"><option value="en-GB">🇬🇧 English</option><option value="es-MX">🇲🇽 Español</option></select></div><div class="book-call-wrapper">
+                <div class="language-toggle desktop" id="language-toggle-desktop" style="position: relative; z-index: 9999; pointer-events: auto;"></div><div class="book-call-wrapper">
                     <div class="call-name-wrapper">
                         <div class="image-account-wrapper">
                             <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" loading="lazy"  alt="" class="image-account lazy-loaded" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
@@ -168,7 +168,7 @@
             <a href="#service-section" class="nav-link" data-i18n="nav.services">Services</a>
             <a href="#project-section" class="nav-link" data-i18n="nav.project">Project</a>
             <a href="#faq-section" class="nav-link" data-i18n="nav.faq">FAQs</a>
-            <div class="language-selector mobile" style="position: relative; z-index: 9999; pointer-events: auto;"><select id="language-dropdown-mobile" class="lang-dropdown" aria-label="Select Language" style="position: relative; z-index: 10000; pointer-events: auto; display: block;"><option value="en-GB">🇬🇧 English</option><option value="es-MX">🇲🇽 Español</option></select></div><div class="book-call-wrapper is-mobile">
+            <div class="language-toggle mobile" id="language-toggle-mobile" style="position: relative; z-index: 9999; pointer-events: auto;"></div><div class="book-call-wrapper is-mobile">
                 <div class="call-name-wrapper">
                     <div class="image-account-wrapper">
                         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy"  alt="" class="image-account lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="">
@@ -1140,5 +1140,89 @@
     <script src="assets/js/modules/language-detector.js" type="text/javascript"></script>
     <script src="assets/js/modules/lazy-loader.js" type="text/javascript"></script>
     <script src="assets/js/modules/app.js" type="text/javascript"></script>
+    
+    <!-- Language Toggle Script -->
+    <script>
+    class LanguageToggle {
+        constructor() {
+            this.currentLanguage = 'en-GB';
+            this.isEnglish = true;
+            this.init();
+        }
+        
+        init() {
+            // Initialize both desktop and mobile toggles
+            this.initializeToggle('language-toggle-desktop');
+            this.initializeToggle('language-toggle-mobile');
+        }
+        
+        initializeToggle(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            // Create toggle structure
+            container.classList.add('switch-container');
+            container.setAttribute('role', 'button');
+            container.setAttribute('aria-pressed', 'false');
+            container.setAttribute('tabindex', '0');
+            container.setAttribute('aria-label', 'Switch language');
+            
+            const switchElement = document.createElement('div');
+            switchElement.classList.add('switch', 'en');
+            container.appendChild(switchElement);
+            
+            // Add event listeners
+            container.addEventListener('click', () => this.toggle());
+            container.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.toggle();
+                }
+            });
+        }
+        
+        toggle() {
+            this.isEnglish = !this.isEnglish;
+            const newLanguage = this.isEnglish ? 'en-GB' : 'es-MX';
+            
+            // Update both toggles
+            this.updateToggle('language-toggle-desktop');
+            this.updateToggle('language-toggle-mobile');
+            
+            // Update language
+            if (typeof updateLanguage === 'function') {
+                updateLanguage(newLanguage);
+            }
+            
+            // Update current language
+            this.currentLanguage = newLanguage;
+        }
+        
+        updateToggle(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            const switchElement = container.querySelector('.switch');
+            if (!switchElement) return;
+            
+            // Update aria-pressed
+            container.setAttribute('aria-pressed', this.isEnglish ? 'false' : 'true');
+            
+            // Update classes and position
+            if (this.isEnglish) {
+                switchElement.classList.remove('on', 'es');
+                switchElement.classList.add('en');
+            } else {
+                switchElement.classList.add('on', 'es');
+                switchElement.classList.remove('en');
+            }
+        }
+    }
+    
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        window.languageToggle = new LanguageToggle();
+    });
+    </script>
 </body>
 </html>
