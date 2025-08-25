@@ -107,3 +107,55 @@
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+/* Eliminate redundant wrapper divs */
+.wrapper.w-layout-blockcontainer,
+.w-layout-blockcontainer.wrapper {
+    display: contents;
+}
+
+/* Simplify form structure */
+.form-block-wrapper {
+    display: contents;
+}
+
+.form-wrapper-inner {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Optimize navigation structure */
+.navbar-wrapper {
+    display: contents;
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Hide excessive slider navigation elements */
+.w-slider-nav:nth-child(n+6) {
+    display: none;
+}
+
+/* Optimize testimonial cards */
+.testimonial-wrapper {
+    display: contents;
+}
+
+.testimonial-content-wrapper {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Reduce FAQ section nesting */
+.faq-wrapper {
+    display: contents;
+}
+
+.faq-question-wrapper {
+    display: grid;
+    gap: 0.5rem;
+}
