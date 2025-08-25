@@ -4889,56 +4889,112 @@ h6 {
 }
 
 @media screen and (max-width: 767px) {
-  /* Fix project details visibility on mobile */
+  /* Restructure project cards to vertical layout on mobile */
+  .project-item {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  
+  .project-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 16px 16px 0 0 !important;
+    margin: 0 !important;
+  }
+  
+  .project-right-content {
+    width: 100% !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  .project-card-top {
+    width: 100% !important;
+  }
+  
+  .project-card-header {
+    margin-bottom: 20px !important;
+  }
+  
+  .title-project {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .description-project {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Product icons grid */
   .project-list-type {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    margin: 15px 0 !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 15px !important;
+    margin: 20px 0 !important;
+    padding: 15px 0 !important;
+    border-top: 1px solid #eee !important;
   }
   
   .project-type {
     display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
     gap: 8px !important;
+    text-align: center !important;
   }
   
   .project-logo-type {
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px !important;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
   }
   
   .project-type-text {
-    font-size: 11px !important;
+    font-size: 10px !important;
     line-height: 1.2 !important;
+    font-weight: 500 !important;
   }
   
+  /* Specifications section */
   .list-spesification-project {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    margin-top: 15px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid #eee !important;
   }
   
   .spesification-project {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    padding: 10px 0 !important;
-    border-bottom: 1px solid #eee !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    flex: 1 !important;
+    gap: 5px !important;
+    padding: 0 !important;
+    border: none !important;
   }
   
   .title-spesification {
-    font-size: 12px !important;
-    color: #666 !important;
+    font-size: 11px !important;
+    color: #888 !important;
+    font-weight: 400 !important;
   }
   
   .value-spesification {
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    text-align: right !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
   }
   
   .nav-menu-phone {
@@ -5280,30 +5336,67 @@ h6 {
 }
 
 @media screen and (max-width: 479px) {
-  /* Fix project details visibility on small mobile */
-  .project-list-type {
-    display: grid !important;
-    grid-template-columns: repeat(1, 1fr) !important;
-    gap: 8px !important;
-    margin: 10px 0 !important;
+  /* Maintain vertical layout on small screens with adjustments */
+  .project-item {
+    margin-bottom: 30px !important;
   }
   
-  .project-type {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    padding: 5px !important;
+  .project-image {
+    height: 200px !important;
+  }
+  
+  .project-right-content {
+    padding: 15px !important;
+  }
+  
+  .title-project {
+    font-size: 18px !important;
+  }
+  
+  .description-project {
+    font-size: 13px !important;
+  }
+  
+  /* Product icons grid - 2 columns on small mobile */
+  .project-list-type {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
   
   .project-logo-type {
-    width: 35px !important;
-    height: 35px !important;
-    min-width: 35px !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
   }
   
   .project-type-text {
-    font-size: 12px !important;
-    line-height: 1.2 !important;
+    font-size: 9px !important;
+  }
+  
+  /* Stack specifications vertically on very small screens */
+  .list-spesification-project {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .spesification-project {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  
+  .spesification-project:last-child {
+    border-bottom: none !important;
+  }
+  
+  .title-spesification {
+    text-align: left !important;
+  }
+  
+  .value-spesification {
+    text-align: right !important;
   }
   
   .nav-menu-phone {
