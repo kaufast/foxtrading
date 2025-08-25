@@ -4834,19 +4834,16 @@ h6 {
   }
 
   .project-item.project-item-3 {
-    flex-flow: column;
     position: static;
     top: 140px;
   }
 
   .project-item.project-item-1 {
-    flex-flow: column;
     position: static;
     top: 80px;
   }
 
   .project-item.project-item-2 {
-    flex-flow: column;
     position: static;
     top: 110px;
   }

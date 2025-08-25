@@ -24,21 +24,13 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/web-shared.css" type="text/css">
     <link rel="stylesheet" href="assets/css/google-fonts.css" media="all">
-    <link rel="stylesheet" href="assets/css/i18n/language-selector.css" media="all">
-    <link rel="stylesheet" href="assets/css/i18n/notifications.css" media="all">
-    <link rel="stylesheet" href="assets/css/i18n/responsive.css" media="all">
-    <link rel="stylesheet" href="assets/css/i18n/lazy-loading.css" media="all">
-    <link rel="stylesheet" href="assets/css/accessibility-fixes.css" media="all">
-    <link rel="stylesheet" href="assets/css/contrast-fixes.css" media="all">
-    <link rel="stylesheet" href="assets/css/cls-fixes.css" media="all">
-    <link rel="stylesheet" href="assets/css/dom-optimization.css" media="all">
-    <link rel="stylesheet" href="assets/css/desktop-layout-fix.css" media="all">
+    <link rel="stylesheet" href="assets/css/project-grid-fix.css" media="all">
     
     <!-- Favicons -->
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="apple-touch-icon" href="">
 </head>
-<body>
+<body class="-GB lang-en-GB">
         <!-- Debug Panel (Development Only) -->
     <div id="debug-info" class="debug-panel" style="display: none;">
         <div class="debug-header">🇸🇬 FoxTrading Debug</div>
@@ -50,33 +42,16 @@
         <button onclick="window.debugManager?.toggle()" class="debug-close">×</button>
     </div>
     <!-- Language Selector -->
-    <div id="language-selector" class="language-selector">
-        <div class="language-current" id="language-current">
-            <span class="flag" id="current-flag">🇬🇧</span>
-            <span class="language-name" id="current-language">English (UK)</span>
-            <span class="chevron">⌄</span>
-        </div>
-        <div class="language-options" id="language-options">
-            <div class="language-option" data-lang="en-GB">
-                <span class="flag">🇬🇧</span>
-                <span class="language-name">English (UK)</span>
-                <span class="market-note">Singapore Business</span>
-            </div>
-            <div class="language-option" data-lang="es-MX">
-                <span class="flag">🇲🇽</span>
-                <span class="language-name">Español (México)</span>
-                <span class="market-note">Proveedores Mexicanos</span>
-            </div>
-        </div>
-    </div>
+    
     
     <!-- Modal -->
     <div id="modal" role="dialog" aria-modal="true" aria-labelledby="Popup Modal" class="modal">
         <div class="modal-bg"></div>
         <div class="modal-container">
             <div class="close-modal">
-                <img src="assets/images/icons/plus.svg" loading="lazy" alt="" class="icon_x">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" alt="" class="icon_x lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891aea7cff616f6d6ff8add_Plus.svg" data-original-srcset="" srcset="">
             </div>
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" width="440" height="628" alt="" class="modal-image lazy-image" data-original-src="https://cdn.prod.website-files.com/67f4e51e5c8ae21dfb2629b0/6891b6033356a6d78ebf4f93_image-109745.png" data-original-srcset="" srcset="">
             <div class="modal-right-content">
                 <div class="form-block w-form">
                     <form id="email-form" name="email-form" method="get" class="form" aria-label="Email Form">
@@ -99,22 +74,23 @@
                         </div>
                         <div class="input-wrapper">
                             <label for="field" class="field-label" data-i18n="form.aboutProject">About the project</label>
-                            <textarea data-i18n="form.writeMessage" placeholder="Write something..." maxlength="5000" id="field" name="field" class="input-field textarea w-input"></textarea>
+                            <textarea data-i18n="form.writeMessage" placeholder="Write something..." maxlength="5000" id="field" name="field" class="input-field textarea w-input">Write something...</textarea>
                         </div>
-                        <input type="submit" data-wait="Please wait..." class="submit-button w-button" data-i18n="form.submit" value="Submit" disabled>
+                        <input type="submit" data-wait="Please wait..." class="submit-button w-button" data-i18n="form.submit" value="Submit">
                         <label class="w-checkbox checkbox-field">
                             <input type="checkbox" id="checkbox" name="checkbox" class="w-checkbox-input">
                             <span class="terms-conditions w-form-label" for="checkbox"><span data-i18n="form.termsText">By processing, you agree to our</span> <span class="text-span" data-i18n="form.termsLink">Terms and Conditions</span></span>
                         </label>
                     </form>
                     <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" alt="" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c5894a5f38523cd438f2_Group%20482161.svg" data-original-srcset="" srcset="" class="lazy-image">
                         <div class="wrapper-susccess-text">
                             <h3 class="heading-3" data-i18n="form.success">Successful!</h3>
                             <div class="paragraph-body-3 text_grey" data-i18n="form.successMessage">Thank you! We've received your information. Someone from our team will reach out shortly.</div>
                         </div>
                     </div>
                     <div class="w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
-                        <div data-i18n="form.error">Oops! Something went wrong while submitting the form.</div>
+                        <div data-i18n="form.error">Oops! Something went wrong whilst submitting the form.</div>
                     </div>
                 </div>
             </div>
@@ -124,9 +100,9 @@
     <!-- Navbar -->
     <div class="navbar-wrapper">
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
-            <div class="container-nav">
-                <a href="/" aria-current="page" class="brand w-inline-block w--current">
-                    <img src="/assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" width="200" height="50" style="height: 50px; width: auto; max-width: 200px;">
+            <div class="container-nav" style="translate: none; rotate: none; scale: none; width: 90%; transform: translate(0px, 15%);">
+                <a href="/" aria-current="page" class="brand w-inline-block">
+                    <img src="/assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" style="height: 50px; width: auto;">
                 </a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
                     <a href="#about-section" class="nav-link w-nav-link" data-i18n="nav.about">About</a>
@@ -135,13 +111,13 @@
                     <a href="#faq-section" class="nav-link w-nav-link" data-i18n="nav.faq">FAQs</a>
                 </nav>
                 <div class="menu-toggle">
-                    <img loading="lazy" src="assets/images/icons/menu.svg" alt="Menu" width="24" height="24" class="image-menu-toggle">
-                    <img loading="lazy" src="assets/images/icons/close.svg" alt="Close" width="24" height="24" class="close-icon">
+                    <img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="image-menu-toggle lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003a_Frame%202147223887.svg" data-original-srcset="" srcset="">
+                    <img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="close-icon lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003b_Frame%202147223888.svg" data-original-srcset="" srcset="">
                 </div>
-                <div class="book-call-wrapper">
+                <div class="language-selector desktop" style="position: relative; z-index: 9999; pointer-events: auto;"><select id="language-dropdown" class="lang-dropdown" aria-label="Select Language" style="position: relative; z-index: 10000; pointer-events: auto; display: block;"><option value="en-GB">🇬🇧 English (UK)</option><option value="es-MX">🇲🇽 Español (México)</option></select></div><div class="book-call-wrapper">
                     <div class="call-name-wrapper">
                         <div class="image-account-wrapper">
-                            <img src="assets/images/icons/agent.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
+                            <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" loading="lazy" width="36" height="36" alt="" class="image-account lazy-loaded" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
                             <div class="green-circle"></div>
                         </div>
                         <div class="wrapper-founder">
@@ -150,30 +126,28 @@
                         </div>
                     </div>
                     <div class="button-book-a-call">
-                        <div data-i18n="nav.bookCall">Let's meet!</div>
+                        <div data-i18n="nav.bookCall">Book a call</div>
                     </div>
                 </div>
                 <div class="container-nav-shadow" style="will-change: opacity; opacity: 0;"></div>
             </div>
-            <div class="container-nav is-scroll d-none">
-                <a href="/" aria-current="page" class="brand w-nav-brand w--current" aria-label="home">
-                    <img src="assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" width="160" height="40" style="height: 40px; width: auto; max-width: 160px;">
+            <div class="container-nav is-scroll d-none" style="translate: none; rotate: none; scale: none; width: 90%; transform: translate(0px, 15%);">
+                <a href="/" aria-current="page" class="brand w-nav-brand" aria-label="home">
+                    <img src="assets/images/foxtrading-logo.svg" alt="FoxTrading Singapore" style="height: 40px; width: auto;">
                 </a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
-                    <a href="#hero-section" class="nav-link w-nav-link w--current" data-i18n="nav.home">Home</a>
                     <a href="#about-section" class="nav-link w-nav-link" data-i18n="nav.about">About</a>
                     <a href="#service-section" class="nav-link w-nav-link" data-i18n="nav.services">Services</a>
                     <a href="#project-section" class="nav-link w-nav-link" data-i18n="nav.project">Project</a>
-                    <a href="#testimonial-section" class="nav-link w-nav-link" data-i18n="nav.testimonial">Testimonial</a>
                     <a href="#faq-section" class="nav-link w-nav-link" data-i18n="nav.faq">FAQs</a>
                 </nav>
                 <div class="menu-toggle">
-                    <img loading="lazy" src="assets/images/icons/menu.svg" alt="Menu" width="24" height="24" class="image-menu-toggle">
-                    <img loading="lazy" src="assets/images/icons/close.svg" alt="Close" width="24" height="24" class="close-icon">
+                    <img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="image-menu-toggle lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003a_Frame%202147223887.svg" data-original-srcset="" srcset="">
+                    <img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" class="close-icon lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003b_Frame%202147223888.svg" data-original-srcset="" srcset="">
                 </div>
                 <div class="book-call-wrapper">
                     <div class="image-account-wrapper">
-                        <img src="assets/images/icons/agent.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" width="36" height="36" alt="" class="image-account lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="">
                         <div class="green-circle"></div>
                     </div>
                     <div class="wrapper-founder">
@@ -181,25 +155,24 @@
                         <div class="position" data-i18n="founder.position">Trade Specialist</div>
                     </div>
                     <div class="button-book-a-call">
-                        <div data-i18n="nav.bookCall">Let's meet!</div>
+                        <div data-i18n="nav.bookCall">Book a call</div>
                     </div>
                 </div>
             </div>
             <div class="w-nav-overlay"></div>
-        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
         
         <!-- Mobile Menu -->
         <div class="nav-menu-phone">
-            <a href="#hero-section" class="nav-link" data-i18n="nav.home">Home</a>
+            <a href="#hero-section" class="nav-link w--current" data-i18n="nav.home">Home</a>
             <a href="#about-section" class="nav-link" data-i18n="nav.about">About</a>
             <a href="#service-section" class="nav-link" data-i18n="nav.services">Services</a>
             <a href="#project-section" class="nav-link" data-i18n="nav.project">Project</a>
-            <a href="#testimonial-section" class="nav-link" data-i18n="nav.testimonial">Testimonial</a>
             <a href="#faq-section" class="nav-link" data-i18n="nav.faq">FAQs</a>
-            <div class="book-call-wrapper is-mobile">
+            <div class="language-selector mobile" style="position: relative; z-index: 9999; pointer-events: auto;"><select id="language-dropdown-mobile" class="lang-dropdown" aria-label="Select Language" style="position: relative; z-index: 10000; pointer-events: auto; display: block;"><option value="en-GB">🇬🇧 English (UK)</option><option value="es-MX">🇲🇽 Español (México)</option></select></div><div class="book-call-wrapper is-mobile">
                 <div class="call-name-wrapper">
                     <div class="image-account-wrapper">
-                        <img src="assets/images/icons/agent.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" width="36" height="36" alt="" class="image-account lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="">
                         <div class="green-circle"></div>
                     </div>
                     <div class="wrapper-founder">
@@ -208,84 +181,56 @@
                     </div>
                 </div>
                 <div class="button-book-a-call">
-                    <div data-i18n="nav.bookCall">Let's meet!</div>
+                    <div data-i18n="nav.bookCall">Book a call</div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="hero-section" class="hero-section">
+  <section id="hero-section" class="hero-section">
         <div class="w-layout-blockcontainer container w-container">
             <div class="hero-contain">
                 <div class="hero-title-wrapper">
-                    <div class="hero-titile-text" data-i18n="hero.title">Bringing premium flavors from Mexico to the world</div>
-                    <div class="hero-sub-title" data-i18n="hero.subtitle">Discover our curated selection of fresh produce, frozen blends, specialty foods, proteins, and fine spirits—sourced responsibly and delivered globally with unmatched quality.</div>
+                    <div class="hero-titile-text" data-i18n="hero.title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Bringing premium flavors from Mexico</div>
+                    <div class="hero-sub-title" data-i18n="hero.subtitle" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Discover our curated selection of fresh produce, frozen blends, specialty foods, proteins, and fine spirits—sourced responsibly and delivered globally with unmatched quality.</div>
                 </div>
                 <div class="hero-overlay"></div>
                 <div class="hero-slider-wrapper">
                     <div data-delay="3000" data-animation="slide" class="slider w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true" role="region" aria-label="carousel">
-                        <div class="w-slider-mask" id="w-slider-mask-0">
-                            <div class="slide-hero-image w-slide" aria-label="1 of 3" role="group">
+                        <div class="w-slider-mask" id="w-slider-mask-0"><div class="slide-hero-image w-slide" aria-label="1 of 3" role="group" style="transition: all, transform 500ms; transform: translateX(-1232px); opacity: 1;" aria-hidden="true">
+                                <picture aria-hidden="true">
+                                    <source media="(max-width: 767px)" srcset="assets/images/food/hero-1-mobile.webp" aria-hidden="true">
+                                    <source media="(max-width: 991px)" srcset="assets/images/food/hero-1-tablet.webp" aria-hidden="true">
+                                    <img src="assets/images/food/hero-1.webp.webp" alt="Premium Mexican food exports to Singapore" loading="lazy" class="hero-image" aria-hidden="true">
+                                </picture>
+                            </div><div class="slide-hero-image w-slide" aria-label="2 of 3" role="group" style="transition: all, transform 500ms; transform: translateX(-1232px); opacity: 1;">
                                 <picture>
                                     <source media="(max-width: 767px)" srcset="assets/images/food/hero-1-mobile.webp">
                                     <source media="(max-width: 991px)" srcset="assets/images/food/hero-1-tablet.webp">
-                                    <img src="assets/images/food/hero-1.webp.webp" alt="Premium Mexican food exports to Singapore" width="1920" height="792" loading="eager" fetchpriority="high" class="hero-image">
+                                    <img src="assets/images/food/hero-1.webp.webp" alt="Global food supply chain and premium products" loading="lazy" class="hero-image">
                                 </picture>
-                            </div>
-                            <div class="slide-hero-image w-slide" aria-label="2 of 3" role="group">
-                                <picture>
-                                    <source media="(max-width: 767px)" srcset="assets/images/food/hero-1-mobile.webp">
-                                    <source media="(max-width: 991px)" srcset="assets/images/food/hero-1-tablet.webp">
-                                    <img src="assets/images/food/hero-1.webp.webp" alt="Global food supply chain and premium products" width="1920" height="792" loading="eager" fetchpriority="high" class="hero-image">
+                            </div><div class="w-slide" aria-label="3 of 3" role="group" style="transition: all, transform 500ms; transform: translateX(-1232px); opacity: 1;" aria-hidden="true">
+                                <picture aria-hidden="true">
+                                    <source media="(max-width: 767px)" srcset="assets/images/food/hero-1-mobile.webp" aria-hidden="true">
+                                    <source media="(max-width: 991px)" srcset="assets/images/food/hero-1-tablet.webp" aria-hidden="true">
+                                    <img src="assets/images/food/hero-1.webp.webp" alt="International food trading and premium agricultural products" loading="lazy" class="hero-image" aria-hidden="true">
                                 </picture>
-                            </div>
-                            <div class="w-slide" aria-label="3 of 3" role="group">
-                                <picture>
-                                    <source media="(max-width: 767px)" srcset="assets/images/food/hero-1-mobile.webp">
-                                    <source media="(max-width: 991px)" srcset="assets/images/food/hero-1-tablet.webp">
-                                    <img src="assets/images/food/hero-1.webp.webp" alt="International food trading and premium agricultural products" width="1920" height="792" loading="eager" fetchpriority="high" class="hero-image">
-                                </picture>
-                            </div>
-                        </div>
+                            </div><div aria-live="off" aria-atomic="true" class="w-slider-aria-label" data-wf-ignore="">Slide 2 of 3.</div></div>
                         <div class="left-arrow-hero w-slider-arrow-left" role="button" tabindex="0" aria-controls="w-slider-mask-0" aria-label="previous slide">
                             <div class="w-icon-slider-left"></div>
                         </div>
-                        <div class="right-arrow-hero w-slider-arrow-right" role="button" tabindex="0" aria-controls="w-slider-mask-0" aria-label="next slide">
+                        <div class="right-arrow-hero w-slider-arrow-right" role="button" tabindex="0" aria-controls="w-slider-mask-0" aria-label="next slide" style="">
                             <div class="w-icon-slider-right"></div>
                         </div>
-                        <div class="slide-nav-hero w-slider-nav w-round">
-                            <div class="w-slider-dot w-active" aria-label="Show slide 1 of 3" aria-pressed="true" role="button" tabindex="0" style="margin-left: 3px; margin-right: 3px;"></div>
-                            <div class="w-slider-dot" aria-label="Show slide 2 of 3" aria-pressed="false" role="button" tabindex="-1" style="margin-left: 3px; margin-right: 3px;"></div>
-                            <div class="w-slider-dot" aria-label="Show slide 3 of 3" aria-pressed="false" role="button" tabindex="-1" style="margin-left: 3px; margin-right: 3px;"></div>
-                        </div>
+                        <div class="slide-nav-hero w-slider-nav w-round"><div class="w-slider-dot" data-wf-ignore="" aria-label="Show slide 1 of 3" aria-pressed="false" role="button" tabindex="-1" style="margin-left: 3px; margin-right: 3px;"></div><div class="w-slider-dot w-active" data-wf-ignore="" aria-label="Show slide 2 of 3" aria-pressed="true" role="button" tabindex="0" style="margin-left: 3px; margin-right: 3px;"></div><div class="w-slider-dot" data-wf-ignore="" aria-label="Show slide 3 of 3" aria-pressed="false" role="button" tabindex="-1" style="margin-left: 3px; margin-right: 3px;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Brand Section -->
-    <!-- <section class="brand-section">
-        <div class="w-layout-blockcontainer container w-container">
-            <div class="brand-partner-contain">
-                <div class="brand-partner-title" data-i18n="hero.toolsPartners">Tools & render which we use</div>
-                <div class="slider-partner-wrapper">
-                    <div class="brand-overlay"></div>
-                    <div class="slider-partner">
-                        <div class="brand-partner-list">
 
-                            <img src="" loading="lazy" alt="" class="brand-partner-logo">
-                        </div>
-                        <div class="brand-partner-list">
-
-                            <img src="" loading="lazy" alt="" class="brand-partner-logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- About Section -->
     <section id="about-section" class="about-us-section">
@@ -375,6 +320,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <img width="600" height="804" alt="Premium Mexican produce and vegetables" src="assets/images/food/vegetables.webp" loading="lazy" class="benefit-image">
                             </div>
                         </div>
                         <div data-w-tab="Tab 3" class="w-tab-pane" id="w-tabs-0-data-w-pane-2" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-2">
@@ -396,6 +342,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <img width="600" height="804" alt="Premium frozen foods" src="assets/images/food/Frozen-Foods.webp" loading="lazy" class="benefit-image">
                             </div>
                         </div>
                         <div data-w-tab="Tab 4" class="w-tab-pane" id="w-tabs-0-data-w-pane-3" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-3">
@@ -417,6 +364,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <img width="600" height="804" alt="Premium meat and seafood" src="assets/images/food/Livestock.webp" loading="lazy" class="benefit-image">
                             </div>
                         </div>
                     </div>
@@ -440,21 +388,156 @@
                     </div>
                 </div>
             </div>
+            <!-- Mobile Slider -->
+            <div data-delay="4000" data-animation="slide" class="slider-benefit w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true" role="region" aria-label="carousel">
+                <div class="mask w-slider-mask" id="w-slider-mask-1">
+                    <div class="w-slide" aria-label="1 of 4" role="group">
+                        <div class="benefit-contain is-mobile">
+                            <div class="benefit-image-wrapper">
+                                <div class="benefit-detail-card">
+                                    <div class="dots">
+                                        <div class="benefit-dot active"></div>
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot"></div>
+                                    </div>
+                                    <div class="benefit-wrapper-content">
+                                        <div class="paragraph-body-3 font-sathosi text_white" data-i18n="services.ecoFriendly.fact">Did you know that using bamboo as a building material can reduce construction emissions by up to 80% compared to traditional hardwood?</div>
+                                        <div class="service-amount-wrapper">
+                                            <div class="service-value-wrapper">
+                                                <div class="benefit-amount-text" data-i18n="services.ecoFriendly.stat1">40%</div>
+                                                <div class="benefit-value" data-i18n="services.ecoFriendly.stat1Label">Global carbon emissions</div>
+                                            </div>
+                                            <div class="service-value-wrapper">
+                                                <div class="benefit-amount-text" data-i18n="services.ecoFriendly.stat2">30%</div>
+                                                <div class="benefit-value" data-i18n="services.ecoFriendly.stat2Label">Cut by eco-friendly construction</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="benefit-image" src="assets/images/food/Spirits.webp" width="600" height="804" alt="Premium Mexican spirits" loading="lazy">
+                            </div>
+                            <div class="benefit-items is-active">
+                                <div class="benefit-title is-active" data-i18n="services.ecoFriendly.title">1. Eco-friendly construction</div>
+                                <div class="benefit-desc is-active" data-i18n="services.ecoFriendly.description">Building a better future with sustainable materials, energy-efficient designs, and environmentally conscious practices — without compromising on style or comfort.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-slide" aria-label="2 of 4" role="group">
+                        <div class="benefit-contain is-mobile">
+                            <div class="benefit-image-wrapper">
+                                <div class="benefit-detail-card">
+                                    <div class="dots">
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot active"></div>
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot"></div>
+                                    </div>
+                                    <div class="benefit-wrapper-content">
+                                        <div class="paragraph-body-3 font-sathosi text_white" data-i18n="services.sustainable.fact">Homes designed with optimal natural lighting can reduce electricity use by up to 75% during daylight hours — and boost your mood too!</div>
+                                        <div class="service-amount-wrapper">
+                                            <div class="service-value-wrapper">
+                                                <div class="benefit-amount-text" data-i18n="services.sustainable.stat1">40%</div>
+                                                <div class="benefit-value" data-i18n="services.sustainable.stat1Label">Lower household energy costs annually</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="benefit-image" src="assets/images/food/vegetables.webp" width="600" height="804" alt="Premium Mexican produce" loading="lazy">
+                            </div>
+                            <div class="benefit-items is-active">
+                                <div class="benefit-title is-active" data-i18n="services.sustainable.title">2. Sustainable living designs</div>
+                                <div class="benefit-desc is-active" data-i18n="services.sustainable.description">Crafting spaces that support a greener lifestyle — from smart layouts and natural lighting to energy-efficient solutions that reduce your footprint and enhance daily living.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-slide" aria-label="3 of 4" role="group">
+                        <div class="benefit-contain is-mobile">
+                            <div class="benefit-image-wrapper">
+                                <div class="benefit-detail-card">
+                                    <div class="dots">
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot active"></div>
+                                        <div class="benefit-dot"></div>
+                                    </div>
+                                    <div class="benefit-wrapper-content">
+                                        <div class="paragraph-body-3 font-sathosi text_white" data-i18n="services.greenHome.fact">Installing a green roof can extend your roof's lifespan by twice as long while naturally cooling your home and reducing urban heat!</div>
+                                        <div class="service-amount-wrapper">
+                                            <div class="service-value-wrapper">
+                                                <div class="benefit-amount-text" data-i18n="services.greenHome.stat1">40%</div>
+                                                <div class="benefit-value" data-i18n="services.greenHome.stat1Label">In USA, green home can cut energy use</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="benefit-image" src="assets/images/food/Frozen-Foods.webp" width="600" height="804" alt="Premium frozen foods" loading="lazy">
+                            </div>
+                            <div class="benefit-items is-active">
+                                <div class="benefit-title is-active" data-i18n="services.greenHome.title">3. Green home solutions</div>
+                                <div class="benefit-desc is-active" data-i18n="services.greenHome.description">Integrating eco-conscious technologies and materials to create homes that are energy-efficient, cost-effective, and kind to the environment — without sacrificing comfort or style.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-slide" aria-label="4 of 4" role="group">
+                        <div class="benefit-contain is-mobile">
+                            <div class="benefit-image-wrapper">
+                                <div class="benefit-detail-card">
+                                    <div class="dots">
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot"></div>
+                                        <div class="benefit-dot active"></div>
+                                    </div>
+                                    <div class="benefit-wrapper-content">
+                                        <div class="paragraph-body-3 font-sathosi text_white" data-i18n="services.ecoConscious.fact">Ancient civilizations like the Greeks and Egyptians oriented their buildings to maximize natural light and ventilation!</div>
+                                        <div class="service-amount-wrapper">
+                                            <div class="service-value-wrapper">
+                                                <div class="benefit-amount-text" data-i18n="services.ecoConscious.stat1">70%</div>
+                                                <div class="benefit-value" data-i18n="services.ecoConscious.stat1Label">Reduce a building's operational carbon footprint</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="benefit-image" src="assets/images/food/Livestock.webp" width="600" height="804" alt="Premium meat and seafood" loading="lazy">
+                            </div>
+                            <div class="benefit-items is-active">
+                                <div class="benefit-title is-active" data-i18n="services.ecoConscious.title">4. Eco-conscious architecture</div>
+                                <div class="benefit-desc is-active" data-i18n="services.ecoConscious.description">Blending innovative design with environmental responsibility to create structures that harmonize with nature, minimize impact, and promote long-term sustainability.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-arrow w-slider-arrow-left" role="button" tabindex="0" aria-controls="w-slider-mask-1" aria-label="previous slide">
+                    <div class="w-icon-slider-left"></div>
+                </div>
+                <div class="right-arrow w-slider-arrow-right" role="button" tabindex="0" aria-controls="w-slider-mask-1" aria-label="next slide">
+                    <div class="w-icon-slider-right"></div>
+                </div>
+                <div class="slide-nav w-slider-nav w-slider-nav-invert w-round">
+                    <div class="w-slider-dot w-active" aria-label="Show slide 1 of 4" aria-pressed="true" role="button" tabindex="0"></div>
+                    <div class="w-slider-dot" aria-label="Show slide 2 of 4" aria-pressed="false" role="button" tabindex="-1"></div>
+                    <div class="w-slider-dot" aria-label="Show slide 3 of 4" aria-pressed="false" role="button" tabindex="-1"></div>
+                    <div class="w-slider-dot" aria-label="Show slide 4 of 4" aria-pressed="false" role="button" tabindex="-1"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="project-section" class="project-section">
+
+    
+
+ <section id="project-section" class="project-section lazy-loaded" data-lazy-section="true" data-lazy-loaded="true" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
         <div class="w-layout-blockcontainer container w-container">
             <div class="projects-contain">
-                <div class="header-section project">
-                    <div class="sub-label-section" data-i18n="projects.label">OUR PROJECT</div>
-                    <div class="title-section project" data-i18n="projects.title">Built light, built right. Our portfolio reflects a vision of timeless design and responsible construction.</div>
+                <div class="header-section project" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <div class="sub-label-section" data-i18n="projects.label" style="translate: none; rotate: none; scale: none; transform: translate(0px, 20px); opacity: 0;">OUR PRODUCTS</div>
+                    <div class="title-section project" data-i18n="projects.title">Quality sourced, globally traded. Our portfolio reflects a commitment to excellence in international food trading.</div>
                 </div>
                 <div class="list-project">
                     <!-- Project 1 -->
-                    <div class="project-item project-item-1">
-                        <img src="assets/images/food/Fresh-Foods.webp" loading="lazy" width="600" height="544" alt="Fresh foods and premium produce" class="project-image">
+                    <div class="project-item project-item-1" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <img src="https://foxtrading.vercel.app/assets/images/food/Fresh-Foods.webp" loading="lazy" width="600" height="544" alt="Fresh foods and premium produce" class="project-image lazy-loaded" data-original-src="https://foxtrading.vercel.app/assets/images/food/Fresh-Foods.webp" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
@@ -464,43 +547,43 @@
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
                                     <!-- Row 1: Your 9 requested food items in 3 columns -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/AVOCADO.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">AVOCADO</div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/AVOCADO.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;" data-i18n="projects.sustainableLiving">NUT</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/NUT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">NUTS</div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/NUT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;" data-i18n="projects.greenHomeSolutions">PECAN</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/MANGO.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">MANGO</div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/MANGO.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;" data-i18n="projects.ecoFriendlyConstruction">MANGO</div>
                                     </div>
                                     
                                     <!-- Row 2 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BERRIES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">BERRIES</div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BERRIES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;" data-i18n="projects.ecoConsciousArchitecture">AVOCADO</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/DRAGON-FRUIT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/DRAGON-FRUIT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">DRAGON FRUIT</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PAPAYA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PAPAYA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PAPAYA</div>
                                     </div>
                                     
                                     <!-- Row 3 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CITRUS.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CITRUS.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">CITRUS</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/GUAVA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/GUAVA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">GUAVA</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TOMATOES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TOMATOES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">TOMATOES</div>
                                     </div>
                                 </div>
@@ -508,11 +591,11 @@
                             <div class="list-spesification-project">
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project1.totalArea">Origin countries</div>
-                                    <div class="value-spesification" data-i18n="projects.project1.area">Mexico </div>
+                                    <div class="value-spesification" data-i18n="projects.project1.area">15+ countries</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project1.totalRoom">Product varieties</div>
-                                    <div class="value-spesification" data-i18n="projects.project1.rooms">30+ products</div>
+                                    <div class="value-spesification" data-i18n="projects.project1.rooms">200+ varieties</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project1.dateOfBuild">Season availability</div>
@@ -523,54 +606,54 @@
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="project-item project-item-2">
-                        <img src="assets/images/food/Frozen-Foods.webp" loading="lazy" width="600" height="544" alt="Frozen fruits and blends" class="project-image">
+                    <div class="project-item project-item-2" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <img src="https://foxtrading.vercel.app/assets/images/food/Frozen-Foods.webp" loading="lazy" width="600" height="544" alt="Frozen fruits and blends" class="project-image lazy-loaded" data-original-src="https://foxtrading.vercel.app/assets/images/food/Frozen-Foods.webp" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project2.title">Frozen & Blends</div>
+                                    <div class="title-project" data-i18n="projects.project2.title">Frozen &amp; Blends</div>
                                     <div class="description-project" data-i18n="projects.project2.description">Exotic tropical fruits including pineapple, coconut, passion fruit, banana, and more. Hand-selected at peak ripeness and shipped with care to maintain exceptional quality and flavor.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
                                     <!-- Row 1: Your 9 requested food items in 3 columns -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PINEAPPLE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PINEAPPLE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PINEAPPLE</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/COCONUT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/COCONUT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">COCONUT</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PASSION_FRUIT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PASSION-FRUIT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PASSION FRUIT</div>
                                     </div>
                                     
                                     <!-- Row 2 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/VEGETABLE-MIX.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/VEGETABLE-MIX.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">VEGETABLE BLENDS</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PEACH.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PEACH.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PEACH</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/thumbnails/BERRIES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BERRIES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">BERRIES</div>
                                     </div>
                                     
                                     <!-- Row 3 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TOMATILLO.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TOMATILLO.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">TOMATILLO</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CHILLI.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CHILLI.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">CHILLI</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PLUM.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PLUM.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PLUM</div>
                                     </div>
                                 </div>
@@ -578,11 +661,11 @@
                             <div class="list-spesification-project">
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project2.totalArea">Origin countries</div>
-                                    <div class="value-spesification" data-i18n="projects.project2.area">Mexico </div>
+                                    <div class="value-spesification" data-i18n="projects.project2.area">Mexico</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project2.totalRoom">Product varieties</div>
-                                    <div class="value-spesification" data-i18n="projects.project2.rooms">30+ products</div>
+                                    <div class="value-spesification" data-i18n="projects.project2.rooms">30+ specialty products</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project2.dateOfBuild">Season availability</div>
@@ -593,8 +676,8 @@
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="project-item project-item-3">
-                        <img src="assets/images/food/Procesed.webp" loading="lazy" width="600" height="544" alt="Specialty and processed foods" class="project-image">
+                    <div class="project-item project-item-3" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <img src="https://foxtrading.vercel.app/assets/images/food/Procesed.webp" loading="lazy" width="600" height="544" alt="Specialty and processed foods" class="project-image lazy-loaded" data-original-src="https://foxtrading.vercel.app/assets/images/food/Procesed.webp" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
@@ -604,43 +687,43 @@
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
                                     <!-- Row 1: Your 9 requested food items in 3 columns -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/APPLES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/APPLES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">APPLE</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/GUACAMOLE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/GUACAMOLE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">GUACAMOLE</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/SAUCES.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PULPS, PASTES & MIXED</div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/SAUCE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PULPS, PASTES &amp; MIXED</div>
                                     </div>
                                     
                                     <!-- Row 2 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/AVOCADO-OIL.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/AVOCADO-OIL.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">AVOCADO OIL</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/AGAVE-SYRUP.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">AGAVE HONEY</div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/AGAVE-SYRUP.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-type-text" style="font-size: 13px; font-weight: 500;">AGAVE SYRUP</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CANDY.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/DRAGON-FRUIT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">CANDY</div>
                                     </div>
                                     
                                     <!-- Row 3 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PEANUT-BUTTER.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PEANUT-BUTTER.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">ORGANIC PEANUT BUTTER</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CAJETA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CAJETA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">GOAT’S MILK CARAMEL</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/HOT-SAUCE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/HOT-SAUCE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">HOT SAUCE</div>
                                     </div>
                                 </div>
@@ -648,11 +731,11 @@
                             <div class="list-spesification-project">
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project3.totalArea">Origin countries</div>
-                                    <div class="value-spesification" data-i18n="projects.project3.area">Mexico </div>
+                                    <div class="value-spesification" data-i18n="projects.project3.area">Mexico</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project3.totalRoom">Product varieties</div>
-                                    <div class="value-spesification" data-i18n="projects.project3.rooms">30+ products</div>
+                                    <div class="value-spesification" data-i18n="projects.project3.rooms">30+ processed foods</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project3.dateOfBuild">Season availability</div>
@@ -663,54 +746,54 @@
                     </div>
 
                     <!-- Project 4 -->
-                    <div class="project-item project-item-4">
-                        <img src="assets/images/food/Livestock.webp" loading="lazy" width="600" height="544" alt="Premium meat and fish specialties" class="project-image">
+                    <div class="project-item project-item-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <img src="https://foxtrading.vercel.app/assets/images/food/Livestock.webp" loading="lazy" width="600" height="544" alt="Premium meat and fish specialties" class="project-image lazy-loaded" data-original-src="https://foxtrading.vercel.app/assets/images/food/Livestock.webp" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project4.title">Meat & Fish Specialties</div>
+                                    <div class="title-project" data-i18n="projects.project4.title">Meat &amp; Fish Specialties</div>
                                     <div class="description-project" data-i18n="projects.project4.description">Premium animal-based proteins sourced from trusted producers. Our selection includes beef, poultry, pork, lamb, fish, and seafood—delivered with strict quality standards to ensure freshness, nutrition, and global market readiness.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
                                     <!-- Row 1: Your 9 requested food items in 3 columns -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BEEF.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BEEF.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">BEEF</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TUNA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/Tuna.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">TUNA</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/SALMON.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/Salmon.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">SALMON</div>
                                     </div>
                                     
                                     <!-- Row 2 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PORK.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/PORK.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">PORK</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CHICKEN.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/CHICKEN.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">CHICKEN</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/LAMB.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/LAMB.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">LAMB</div>
                                     </div>
                                     
                                     <!-- Row 3 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/SEAFOOD.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/SEAFOOD.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">SEAFOOD</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TROUT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TROUT.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">TROUT</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TURKEY.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TURKEY.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">TURKEY</div>
                                     </div>
                                 </div>
@@ -718,11 +801,11 @@
                             <div class="list-spesification-project">
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project4.totalArea">Origin countries</div>
-                                    <div class="value-spesification" data-i18n="projects.project4.area">Mexico</div>
+                                    <div class="value-spesification" data-i18n="projects.project4.area">Mexico + selected international markets</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project4.totalRoom">Product varieties</div>
-                                    <div class="value-spesification" data-i18n="projects.project4.rooms">20+ products</div>
+                                    <div class="value-spesification" data-i18n="projects.project4.rooms">20+ livestock &amp; seafood products</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project4.dateOfBuild">Season availability</div>
@@ -733,40 +816,40 @@
                     </div>
 
                     <!-- Project 5 -->
-                    <div class="project-item project-item-5">
-                        <img src="assets/images/food/mezcal.webp" loading="lazy" width="600" height="544" alt="Premium spirits and beverages" class="project-image">
+                    <div class="project-item project-item-5" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                        <img src="https://foxtrading.vercel.app/assets/images/food/mezcal.webp" loading="lazy" width="600" height="544" alt="Premium spirits and beverages" class="project-image lazy-loaded" data-original-src="https://foxtrading.vercel.app/assets/images/food/mezcal.webp" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project5.title">Processed Foods</div>
-                                    <div class="description-project" data-i18n="projects.project5.description">Value-added processed foods including canned goods, packaged foods, and ready-to-eat items. Strict quality control ensures consistency and safety standards.</div>
+                                    <div class="title-project" data-i18n="projects.project5.title">Premium Spirits &amp; Beverages</div>
+                                    <div class="description-project" data-i18n="projects.project5.description">Premium alcoholic beverages including traditional Mexican spirits, craft beers, wines, and international spirits. Carefully selected from renowned distilleries and breweries worldwide.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
                                     <!-- Row 1: Your 9 requested food items in 3 columns -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TEQUILA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/TEQUILA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">TEQUILA</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/MEZCAL.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/MEZCAL.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">MEZCAL</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/VODKA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/VODKA.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">VODKA</div>
                                     </div>
                                     
                                     <!-- Row 2 -->
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BEER.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/BEER.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">CRAFT BEER</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/WINE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/WINE.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">WINE</div>
                                     </div>
                                     <div class="project-type" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="project-logo-type" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/WHISKY.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                                        <div class="project-logo-type lazy-bg" style="width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0; border: 3px solid #e0e0e0; background-image: url('assets/images/thumbnails/WHISKY.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                                         <div class="project-type-text" style="font-size: 13px; font-weight: 500;">WHISKY</div>
                                     </div>
                                     
@@ -776,8 +859,7 @@
                             <div class="list-spesification-project">
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project5.totalArea">Origin countries</div>
-                                    <div class="value-spesification" data-i18n="projects.project5.area">Mexico
-</div>
+                                    <div class="value-spesification" data-i18n="projects.project5.area">Mexico</div>
                                 </div>
                                 <div class="spesification-project">
                                     <div class="title-spesification" data-i18n="projects.project5.totalRoom">Product varieties</div>
@@ -797,6 +879,94 @@
     </section>
 
     <!-- Testimonials Section -->
+ <!-- 
+
+      <section id="testimonial-section" class="testimonial-section">
+         <div class="w-layout-blockcontainer container w-container">
+            <div class="testimonial-contain">
+               <div  class="header-section justify_center">
+                  <div class="sub-label-section">Testimonials</div>
+                  <div class="title-section text_center">Hear the voices from the spaces we’ve built</div>
+               </div>
+               <div  class="testimonial-list is-desktop">
+                  <div class="testimonial-item" style="background-color: rgb(246, 246, 246);">
+                     <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6892dcfd38e072c05d101329_pexels-brynna-spencer-63356-227294%201.png" loading="lazy" alt="" class="image-testimonial" style="display: none; opacity: 0; width: 100%; height: 0px;">
+                     <div class="testimonial-text">The team at Terravia translated our vision into a workspace that feels open, intentional, and alive. The minimalist design isn't just aesthetic—it's productive, inspiring, and built for sustainability.</div>
+                     <div class="testimonial-name-wrapper">
+                        <div class="line"></div>
+                        <div class="testimonial-name">Anna de la Vega, Owner of Tiga Cafe</div>
+                     </div>
+                  </div>
+                  <div class="testimonial-item" style="background-color: rgb(246, 246, 246);">
+                     <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6892dcfde9b592e0694ac6a1_pexels-kindelmedia-8550107%202.png" loading="lazy" alt="" class="image-testimonial" style="display: none; opacity: 0; width: 100%; height: 0px;">
+                     <div class="testimonial-text">We were blown away by the clarity of their design process.<br>We needed a commercial space that reflected our brand values—calm, clean, and conscious. Terravia brought that vision to life without compromise. </div>
+                     <div class="testimonial-name-wrapper">
+                        <div class="line"></div>
+                        <div class="testimonial-name">Marcus T, Creative Director at Mono Studio</div>
+                     </div>
+                  </div>
+                  <div class="testimonial-item" style="background-color: rgb(246, 246, 246);">
+                     <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6892dcfdf8c74a3949e79b81_pexels-olly-712521%201.png" loading="lazy" alt="" class="image-testimonial" style="display: none; opacity: 0; width: 100%; height: 0px;">
+                     <div class="testimonial-text">Working with Terravia was effortless. They truly understood our desire for a calm, functional space that respected the environment. Every detail—from the natural materials to the passive energy design—reflects our values.</div>
+                     <div class="testimonial-name-wrapper">
+                        <div class="line"></div>
+                        <div class="testimonial-name">Emily R, Homeowner of Luma House</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="testimonial-list is-mobile">
+                  <div data-delay="4000" data-animation="slide" class="slider-testimonial w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true" role="region" aria-label="carousel">
+                     <div class="mask-testimonial w-slider-mask" id="w-slider-mask-2">
+                        <div class="slide w-slide" aria-label="1 of 3" role="group" style="transition: all; transform: translateX(0px); opacity: 1;">
+                           <div class="testimonial-item" style="background-color: rgb(246, 246, 246);">
+                              <img loading="lazy" src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6892dcfd38e072c05d101329_pexels-brynna-spencer-63356-227294%201.png" alt="" class="image-testimonial" style="display: none; opacity: 0; width: 100%; height: 0px;">
+                              <div class="testimonial-text">The team at Terravia translated our vision into a workspace that feels open, intentional, and alive. The minimalist design isn't just aesthetic—it's productive, inspiring, and built for sustainability.</div>
+                              <div class="testimonial-name-wrapper">
+                                 <div class="line"></div>
+                                 <div class="testimonial-name">Anna de la Vega, Owner of Tiga Cafe</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-slide" aria-label="2 of 3" role="group" style="transition: all; transform: translateX(0px); opacity: 1;">
+                           <div class="testimonial-item" style="background-color: rgb(246, 246, 246);">
+                              <img loading="lazy" src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6892dcfde9b592e0694ac6a1_pexels-kindelmedia-8550107%202.png" alt="" class="image-testimonial" style="display: none; opacity: 0; width: 100%; height: 0px;">
+                              <div class="testimonial-text">We needed a commercial space that reflected our brand values—calm, clean, and conscious. Terravia brought that vision to life without compromise. The team balanced aesthetics, sustainability.</div>
+                              <div class="testimonial-name-wrapper">
+                                 <div class="line"></div>
+                                 <div class="testimonial-name">Marcus T, Creative Director at Mono Studio</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="w-slide" aria-label="3 of 3" role="group" style="transition: all; transform: translateX(0px); opacity: 1;">
+                           <div class="testimonial-item" style="background-color: rgb(246, 246, 246);">
+                              <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6892dcfdf8c74a3949e79b81_pexels-olly-712521%201.png" loading="lazy" alt="" class="image-testimonial" style="display: none; opacity: 0; width: 100%; height: 0px;">
+                              <div class="testimonial-text">Working with Terravia was effortless. They truly understood our desire for a calm, functional space that respected the environment. Every detail—from the natural materials to the passive energy design—reflects our values.</div>
+                              <div class="testimonial-name-wrapper">
+                                 <div class="line"></div>
+                                 <div class="testimonial-name">Emily R, Homeowner of Luma House</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div aria-live="off" aria-atomic="true" class="w-slider-aria-label"></div>
+                     </div>
+                     <div class="left-arrow w-slider-arrow-left" role="button" tabindex="0" aria-controls="w-slider-mask-2" aria-label="previous slide">
+                        <div class="w-icon-slider-left"></div>
+                     </div>
+                     <div class="right-arrow w-slider-arrow-right" role="button" tabindex="0" aria-controls="w-slider-mask-2" aria-label="next slide">
+                        <div class="w-icon-slider-right"></div>
+                     </div>
+                     <div class="slide-nav-2 w-slider-nav w-slider-nav-invert w-round">
+                        <div class="w-slider-dot w-active" aria-label="Show slide 1 of 3" aria-pressed="true" role="button" tabindex="0" style="margin-left: 3px; margin-right: 3px;"></div>
+                        <div class="w-slider-dot" aria-label="Show slide 2 of 3" aria-pressed="false" role="button" tabindex="-1" style="margin-left: 3px; margin-right: 3px;"></div>
+                        <div class="w-slider-dot" aria-label="Show slide 3 of 3" aria-pressed="false" role="button" tabindex="-1" style="margin-left: 3px; margin-right: 3px;"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+ -->
 
 
     <!-- Team Section -->
