@@ -26,38 +26,7 @@
         padding: 0 !important;
     }
     
-    /* Fix product grid layout */
-    .project-list-type {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 15px !important;
-        margin: 20px 0 !important;
-    }
-    
-    /* Fix individual product items */
-    .project-type {
-        display: flex !important;
-        align-items: center !important;
-        gap: 12px !important;
-    }
-    
-    /* Fix circular product icons */
-    .project-logo-type {
-        width: 60px !important;
-        height: 60px !important;
-        border-radius: 50% !important;
-        flex-shrink: 0 !important;
-        border: 3px solid #e0e0e0 !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-    }
-    
-    /* Fix product text */
-    .project-type-text {
-        font-size: 13px !important;
-        font-weight: 500 !important;
-    }
+    /* Don't override the inline styles - they are already correct in the HTML! */
     
     /* Fix specifications layout */
     .list-spesification-project {
