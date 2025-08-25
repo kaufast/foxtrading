@@ -5540,41 +5540,45 @@ h6 {
 
 .lang-dropdown {
   appearance: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
   color: #ffffff;
-  padding: 10px 40px 10px 14px;
-  font-size: 14px;
-  font-family: 'Satoshi', sans-serif;
+  padding: 12px 45px 12px 16px;
+  font-size: 15px;
+  font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
+  letter-spacing: 0.2px;
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;
-  min-width: 160px;
+  min-width: 180px;
   width: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  height: 44px;
+  line-height: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right 14px center;
-  background-size: 14px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  background-position: right 16px center;
+  background-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .lang-dropdown:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .lang-dropdown:focus {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1), 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 8px 24px rgba(0, 0, 0, 0.2);
   outline: none;
+  transform: translateY(-1px);
 }
 
 .lang-dropdown option {
@@ -5597,15 +5601,26 @@ h6 {
 
 /* Light background adjustments for scrolled navbar */
 .container-nav.is-scroll .lang-dropdown {
-  background: rgba(18, 18, 18, 0.05);
-  border: 1px solid rgba(18, 18, 18, 0.1);
+  background: rgba(18, 18, 18, 0.08);
+  border: 1px solid rgba(18, 18, 18, 0.15);
   color: #121212;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23121212' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 16px rgba(18, 18, 18, 0.1);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23121212' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
 }
 
 .container-nav.is-scroll .lang-dropdown:hover {
-  background: rgba(18, 18, 18, 0.1);
-  border-color: rgba(18, 18, 18, 0.2);
+  background: rgba(18, 18, 18, 0.12);
+  border-color: rgba(18, 18, 18, 0.25);
+  box-shadow: 0 8px 24px rgba(18, 18, 18, 0.15);
+  transform: translateY(-2px);
+}
+
+.container-nav.is-scroll .lang-dropdown:focus {
+  background: rgba(18, 18, 18, 0.15);
+  border-color: rgba(18, 18, 18, 0.3);
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.1), 0 8px 24px rgba(18, 18, 18, 0.15);
+  transform: translateY(-1px);
 }
 
 .container-nav.is-scroll .lang-dropdown option {
@@ -5627,9 +5642,11 @@ h6 {
   
   .lang-dropdown {
     width: 100%;
-    min-width: 180px;
-    padding: 12px 40px 12px 16px;
-    font-size: 15px;
+    min-width: 200px;
+    padding: 14px 45px 14px 18px;
+    font-size: 16px;
+    height: 48px;
+    border-radius: 12px;
   }
 }
 
