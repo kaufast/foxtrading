@@ -4889,6 +4889,58 @@ h6 {
 }
 
 @media screen and (max-width: 767px) {
+  /* Fix project details visibility on mobile */
+  .project-list-type {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin: 15px 0 !important;
+  }
+  
+  .project-type {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  
+  .project-logo-type {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+  }
+  
+  .project-type-text {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .list-spesification-project {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 15px !important;
+  }
+  
+  .spesification-project {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  
+  .title-spesification {
+    font-size: 12px !important;
+    color: #666 !important;
+  }
+  
+  .value-spesification {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-align: right !important;
+  }
+  
   .nav-menu-phone {
     grid-column-gap: 14px;
     grid-row-gap: 14px;
@@ -5228,6 +5280,32 @@ h6 {
 }
 
 @media screen and (max-width: 479px) {
+  /* Fix project details visibility on small mobile */
+  .project-list-type {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 8px !important;
+    margin: 10px 0 !important;
+  }
+  
+  .project-type {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 5px !important;
+  }
+  
+  .project-logo-type {
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px !important;
+  }
+  
+  .project-type-text {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+  }
+  
   .nav-menu-phone {
     grid-column-gap: 4px;
     grid-row-gap: 4px;
