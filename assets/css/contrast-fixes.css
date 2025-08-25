@@ -1,0 +1,52 @@
+/* Contrast Accessibility Fixes */
+
+/* Fix low contrast in about us description */
+.desription-about-us {
+    opacity: 1 !important; /* Remove low opacity */
+    color: #333333 !important; /* Darker text for better contrast */
+}
+
+/* Ensure sufficient contrast for body text */
+body {
+    color: #212121 !important; /* Darker default text color */
+}
+
+/* Fix any other low contrast text elements */
+.sub-label-section {
+    color: #666666 !important; /* Better contrast for subtitle labels */
+}
+
+/* Improve contrast for navigation elements */
+.navbar-brand,
+.nav-link {
+    color: #212121 !important;
+}
+
+/* Ensure form elements have good contrast */
+.form-control,
+.form-control::placeholder {
+    color: #333333 !important;
+    border-color: #666666 !important;
+}
+
+/* Fix button contrast if needed */
+.btn-outline,
+.btn-secondary {
+    color: #212121 !important;
+    border-color: #666666 !important;
+}
+
+/* Fix any light gray text that might have contrast issues */
+.text-muted {
+    color: #666666 !important;
+}
+
+/* Ensure testimonial text has good contrast */
+.testimonial-content p {
+    color: #333333 !important;
+}
+
+/* Fix FAQ text contrast */
+.faq-answer {
+    color: #333333 !important;
+}
