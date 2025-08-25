@@ -19,37 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Remove empty wrapper divs and redundant containers
+    // Remove empty wrapper divs
     const removeEmptyWrappers = () => {
-        // Remove completely empty divs
         const emptyDivs = document.querySelectorAll('div:empty');
         emptyDivs.forEach(div => {
             if (!div.className && !div.id) {
                 div.remove();
-            }
-        });
-        
-        // Remove empty divs with only whitespace/wrapper classes
-        const wrapperSelectors = [
-            'div.wrapper:empty',
-            'div.container:empty', 
-            'div.w-layout-blockcontainer:empty',
-            'div[class*="wrapper"]:empty'
-        ];
-        
-        wrapperSelectors.forEach(selector => {
-            document.querySelectorAll(selector).forEach(el => el.remove());
-        });
-        
-        // Remove single-child wrapper divs that serve no purpose
-        const redundantWrappers = document.querySelectorAll('.wrapper, .w-layout-blockcontainer');
-        redundantWrappers.forEach(wrapper => {
-            if (wrapper.children.length === 1 && 
-                !wrapper.hasAttribute('style') && 
-                !wrapper.classList.contains('slider') &&
-                !wrapper.classList.contains('form')) {
-                const child = wrapper.children[0];
-                wrapper.parentNode.replaceChild(child, wrapper);
             }
         });
     };
@@ -66,31 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     
-    // Additional cleanup for slider duplicates
-    const removeSliderDuplicates = () => {
-        // Hide duplicate slider mask elements on mobile
-        const sliderMasks = document.querySelectorAll('.w-slider-mask');
-        sliderMasks.forEach((mask, index) => {
-            if (index > 2 && window.innerWidth < 768) {
-                mask.style.display = 'none';
-            }
-        });
-        
-        // Remove duplicate navigation dots
-        const navDots = document.querySelectorAll('.w-slider-dot');
-        navDots.forEach((dot, index) => {
-            if (index > 4) {
-                dot.remove();
-            }
-        });
-    };
-    
     // Run optimizations
     setTimeout(() => {
         removeExcessiveRows();
         removeEmptyWrappers();
         optimizeSections();
-        removeSliderDuplicates();
         
         // Log DOM size reduction
         const totalElements = document.querySelectorAll('*').length;
