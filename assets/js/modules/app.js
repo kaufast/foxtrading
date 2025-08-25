@@ -837,7 +837,7 @@ class FoxTradingApp {
                 }
             });
 
-            // Book a call buttons
+            // Let's meet! buttons
             const bookCallButtons = document.querySelectorAll('.button-book-a-call div');
             bookCallButtons.forEach(btn => btn.setAttribute('data-i18n', 'nav.bookCall'));
 

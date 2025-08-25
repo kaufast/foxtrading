@@ -79,7 +79,7 @@ class LocalizationManager {
                 "project": "Project",
                 "testimonial": "Testimonial",
                 "faq": "FAQs",
-                "bookCall": "Book a call"
+                "bookCall": "Let's meet!"
             },
             "hero": {
                 "title": "Let's bring your dream building to life!",
