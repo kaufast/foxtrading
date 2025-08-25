@@ -2049,7 +2049,7 @@ textarea.w-input, textarea.w-select {
 :root {
   --black: #121212;
   --white: white;
-  --gray: #888;
+  --gray: #555555;
   --cod: #171717;
   --charcoal: #202020;
   --silver: #b8b8b8;
@@ -2508,8 +2508,8 @@ h6 {
 }
 
 .sub-label-section {
-  opacity: .3;
-  color: #121212;
+  opacity: 1;
+  color: #666666;
   letter-spacing: -.03em;
   white-space: nowrap;
   width: auto;
@@ -2567,8 +2567,8 @@ h6 {
 }
 
 .desription-about-us {
-  opacity: .5;
-  color: #121212;
+  opacity: 1;
+  color: #333333;
   letter-spacing: 0;
   width: 100%;
   margin-top: 0;
