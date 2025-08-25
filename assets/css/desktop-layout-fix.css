@@ -1,6 +1,0 @@
-/* Force horizontal layout on desktop */
-@media screen and (min-width: 768px) {
-    .project-item {
-        flex-direction: row !important;
-    }
-}

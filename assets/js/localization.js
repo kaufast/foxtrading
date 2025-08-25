@@ -153,21 +153,23 @@ class LocalizationManager {
     }
 
     initializeDropdown() {
-        // Create language dropdown if it doesn't exist
-        const existingDropdown = document.getElementById('language-dropdown');
-        if (!existingDropdown) {
-            this.createDropdown();
-        }
+        // Create language dropdown if it doesn't exist - COMMENTED OUT FOR NOW
+        // const existingDropdown = document.getElementById('language-dropdown');
+        // if (!existingDropdown) {
+        //     this.createDropdown();
+        // }
 
-        // Add event listeners
-        const dropdown = document.getElementById('language-dropdown');
-        if (dropdown) {
-            dropdown.addEventListener('change', (e) => {
-                this.changeLanguage(e.target.value);
-            });
-        }
+        // Add event listeners - COMMENTED OUT FOR NOW
+        // const dropdown = document.getElementById('language-dropdown');
+        // if (dropdown) {
+        //     dropdown.addEventListener('change', (e) => {
+        //         this.changeLanguage(e.target.value);
+        //     });
+        // }
     }
 
+    // createDropdown() - COMMENTED OUT FOR NOW
+    /*
     createDropdown() {
         // Find the navigation menu
         const bookCallWrapper = document.querySelector('.book-call-wrapper');
@@ -199,6 +201,7 @@ class LocalizationManager {
             }
         }
     }
+    */
 
     updateDropdownDisplay() {
         const dropdowns = document.querySelectorAll('#language-dropdown, #language-dropdown-mobile');

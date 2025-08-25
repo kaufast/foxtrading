@@ -30,17 +30,6 @@
     <link rel="apple-touch-icon" href="">
 </head>
 <body class="-GB lang-en-GB">
-        <!-- Debug Panel (Development Only) -->
-    <div id="debug-info" class="debug-panel" style="display: none;">
-        <div class="debug-header">🇸🇬 FoxTrading Debug</div>
-        <div>Language: <span id="debug-language">-</span></div>
-        <div>Detection: <span id="debug-method">-</span></div>
-        <div>Confidence: <span id="debug-confidence">-</span></div>
-        <div>Market: <span id="debug-market">Singapore</span></div>
-        <div>Timezone: <span id="debug-timezone">-</span></div>
-        <button onclick="window.debugManager?.toggle()" class="debug-close">×</button>
-    </div>
-    <!-- Language Selector -->
     
     
     <!-- Modal -->
@@ -113,7 +102,7 @@
                     <img loading="lazy" src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003a_Frame%202147223887.svg" alt="Menu toggle" class="image-menu-toggle" data-original-srcset="" srcset="">
                     <img loading="lazy" src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/68916944cbde722a4a90003b_Frame%202147223888.svg" alt="Close menu" class="close-icon" data-original-srcset="" srcset="">
                 </div>
-                <div class="language-toggle desktop" id="language-toggle-desktop" style="position: relative; z-index: 9999; pointer-events: auto;"></div><div class="book-call-wrapper">
+                <!-- <div class="language-toggle desktop" id="language-toggle-desktop" style="position: relative; z-index: 9999; pointer-events: auto;"></div> --><div class="book-call-wrapper">
                     <div class="call-name-wrapper">
                         <div class="image-account-wrapper">
                             <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" loading="lazy"  alt="" class="image-account lazy-loaded" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="" data-lazy-loaded="true" style="opacity: 1; transition: opacity 0.3s;">
@@ -168,7 +157,7 @@
             <a href="#service-section" class="nav-link" data-i18n="nav.services">Services</a>
             <a href="#project-section" class="nav-link" data-i18n="nav.project">Project</a>
             <a href="#faq-section" class="nav-link" data-i18n="nav.faq">FAQs</a>
-            <div class="language-toggle mobile" id="language-toggle-mobile" style="position: relative; z-index: 9999; pointer-events: auto;"></div><div class="book-call-wrapper is-mobile">
+            <!-- <div class="language-toggle mobile" id="language-toggle-mobile" style="position: relative; z-index: 9999; pointer-events: auto;"></div> --><div class="book-call-wrapper is-mobile">
                 <div class="call-name-wrapper">
                     <div class="image-account-wrapper">
                         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy"  alt="" class="image-account lazy-image" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" data-original-srcset="" srcset="">
@@ -1141,134 +1130,5 @@
     <script src="assets/js/modules/lazy-loader.js" type="text/javascript"></script>
     <script src="assets/js/modules/app.js" type="text/javascript"></script>
     
-    <!-- Language Toggle Script -->
-    <script>
-    class LanguageToggle {
-        constructor() {
-            // Get current language from existing system
-            this.currentLanguage = this.getCurrentLanguageFromSystem();
-            this.isEnglish = this.currentLanguage === 'en-GB';
-            this.init();
-        }
-        
-        getCurrentLanguageFromSystem() {
-            // Try to get current language from various sources
-            if (window.app && window.app.i18n) {
-                return window.app.i18n.getCurrentLanguage() || 'en-GB';
-            }
-            if (window.i18n) {
-                return window.i18n.currentLanguage || 'en-GB';
-            }
-            // Check localStorage
-            const stored = localStorage.getItem('preferredLanguage');
-            if (stored) return stored;
-            
-            // Default to English
-            return 'en-GB';
-        }
-        
-        init() {
-            // Initialize both desktop and mobile toggles
-            this.initializeToggle('language-toggle-desktop');
-            this.initializeToggle('language-toggle-mobile');
-            
-            // Listen for language changes from other parts of the system
-            window.addEventListener('languageChanged', (e) => {
-                this.syncWithCurrentLanguage(e.detail?.current || e.detail?.language);
-            });
-        }
-        
-        syncWithCurrentLanguage(newLang) {
-            if (newLang && newLang !== this.currentLanguage) {
-                this.currentLanguage = newLang;
-                this.isEnglish = newLang === 'en-GB';
-                this.updateToggle('language-toggle-desktop', false);
-                this.updateToggle('language-toggle-mobile', false);
-            }
-        }
-        
-        initializeToggle(containerId) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            // Create toggle structure
-            container.classList.add('switch-container');
-            container.setAttribute('role', 'button');
-            container.setAttribute('aria-pressed', 'false');
-            container.setAttribute('tabindex', '0');
-            container.setAttribute('aria-label', 'Switch language');
-            
-            const switchElement = document.createElement('div');
-            switchElement.classList.add('switch', 'en');
-            container.appendChild(switchElement);
-            
-            // Add event listeners
-            container.addEventListener('click', () => this.toggle());
-            container.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.toggle();
-                }
-            });
-        }
-        
-        toggle() {
-            this.isEnglish = !this.isEnglish;
-            const newLanguage = this.isEnglish ? 'en-GB' : 'es-MX';
-            
-            // Update both toggles
-            this.updateToggle('language-toggle-desktop');
-            this.updateToggle('language-toggle-mobile');
-            
-            // Update language using the existing system
-            if (window.app && typeof window.app.changeLanguage === 'function') {
-                window.app.changeLanguage(newLanguage);
-            } else if (window.i18n && typeof window.i18n.setLanguage === 'function') {
-                window.i18n.setLanguage(newLanguage);
-            } else {
-                // Fallback for manual event dispatch
-                window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: newLanguage } }));
-            }
-            
-            // Update current language
-            this.currentLanguage = newLanguage;
-        }
-        
-        updateToggle(containerId, triggerChange = true) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            const switchElement = container.querySelector('.switch');
-            if (!switchElement) return;
-            
-            // Update aria-pressed
-            container.setAttribute('aria-pressed', this.isEnglish ? 'false' : 'true');
-            
-            // Update classes and position
-            if (this.isEnglish) {
-                switchElement.classList.remove('on', 'es');
-                switchElement.classList.add('en');
-            } else {
-                switchElement.classList.add('on', 'es');
-                switchElement.classList.remove('en');
-            }
-        }
-    }
-    
-    // Initialize when DOM is loaded and app is ready
-    function initLanguageToggle() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initLanguageToggle);
-            return;
-        }
-        
-        // Wait a bit for other scripts to initialize
-        setTimeout(() => {
-            window.languageToggle = new LanguageToggle();
-        }, 100);
-    }
-    
-    initLanguageToggle();
-    </script>
 </body>
 </html>

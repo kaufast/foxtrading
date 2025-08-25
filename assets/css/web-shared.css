@@ -5524,7 +5524,8 @@ h6 {
   }
 }
 
-/* Language Toggle Switch Styles */
+/* Language Toggle Switch Styles - COMMENTED OUT FOR NOW */
+/*
 :root {
   --toggle-width: 60px;
   --toggle-height: 32px;
@@ -5673,3 +5674,4 @@ h6 {
     transform: none;
   }
 }
+*/

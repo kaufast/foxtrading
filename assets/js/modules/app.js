@@ -164,6 +164,8 @@ class FoxTradingApp {
             const mobileBookCall = document.querySelector('.book-call-wrapper.is-mobile') ||
                                   document.querySelector('.nav-menu-phone');
 
+            // Language selectors commented out for now
+            /*
             if (bookCallWrapper) {
                 const selector = this.createLanguageSelectorElement('desktop');
                 if (bookCallWrapper.classList.contains('nav-menu') || bookCallWrapper.classList.contains('container-nav')) {
@@ -187,6 +189,7 @@ class FoxTradingApp {
             } else {
                 this.log('Warning: Could not find mobile insertion point');
             }
+            */
 
             // Update initial display
             this.updateLanguageDisplay();
