@@ -114,13 +114,32 @@ function initLanguageDropdown() {
     // Add keyboard listener
     document.addEventListener('keydown', handleKeyDown);
     
+    // Add direct event listeners to all language buttons as backup
+    const languageButtons = document.querySelectorAll('.language-icon-btn');
+    languageButtons.forEach(button => {
+        console.log('🎯 Adding direct event listener to button:', button);
+        button.addEventListener('click', function(event) {
+            console.log('🎯 DIRECT click event fired!', event);
+            event.stopPropagation();
+            event.preventDefault();
+            
+            // Determine type based on button location
+            let type = 'navbar';
+            if (button.classList.contains('mobile-menu')) {
+                type = 'mobile';
+            }
+            
+            toggleLanguageDropdown(type, event);
+        });
+    });
+    
     // Update current language display when language changes
     if (window.foxTradingApp && window.foxTradingApp.i18n) {
         // Listen for language changes if available
         console.log('Language dropdown initialized with foxTradingApp');
     }
     
-    console.log('Language dropdown initialized');
+    console.log('Language dropdown initialized with direct listeners');
 }
 
 /**
