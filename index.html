@@ -238,8 +238,20 @@
                     </div>
                     <a href="mailto:info@foxtradingsingapore.com?subject=Business Inquiry - FoxTrading Singapore&body=Hello FoxTrading Team,%0D%0A%0D%0AI would like to inquire about your Mexican food import services.%0D%0A%0D%0ABest regards" class="button-book-a-call" style="text-decoration: none; color: inherit;">
                         <div data-i18n="nav.bookCall">Talk to us</div>
-                        <div style="font-size: 10px; margin-top: 2px; opacity: 0.8;">info@foxtradingsingapore.com</div>
                     </a>
+                    <div class="language-icon-wrapper">
+                        <button class="language-icon-btn" onclick="toggleLanguageDropdown()" aria-label="Select Language">
+                            🌐
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown-main">
+                            <div class="language-option" onclick="changeLanguageFromDropdown('en-SG')">
+                                🇬🇧 English
+                            </div>
+                            <div class="language-option" onclick="changeLanguageFromDropdown('es-MX')">
+                                🇲🇽 Español
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="container-nav-shadow" style="will-change: opacity; opacity: 0;"></div>
             </div>
@@ -268,8 +280,20 @@
                     </div>
                     <a href="mailto:info@foxtradingsingapore.com?subject=Business Inquiry - FoxTrading Singapore&body=Hello FoxTrading Team,%0D%0A%0D%0AI would like to inquire about your Mexican food import services.%0D%0A%0D%0ABest regards" class="button-book-a-call" style="text-decoration: none; color: inherit;">
                         <div data-i18n="nav.bookCall">Talk to us</div>
-                        <div style="font-size: 10px; margin-top: 2px; opacity: 0.8;">info@foxtradingsingapore.com</div>
                     </a>
+                    <div class="language-icon-wrapper">
+                        <button class="language-icon-btn" onclick="toggleLanguageDropdown('scroll')" aria-label="Select Language">
+                            🌐
+                        </button>
+                        <div class="language-dropdown" id="language-dropdown-scroll">
+                            <div class="language-option" onclick="changeLanguageFromDropdown('en-SG')">
+                                🇬🇧 English
+                            </div>
+                            <div class="language-option" onclick="changeLanguageFromDropdown('es-MX')">
+                                🇲🇽 Español
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0">
@@ -279,6 +303,19 @@
             <a href="#service-section" class="nav-link" data-i18n="nav.services">Services</a>
             <a href="#project-section" class="nav-link" data-i18n="nav.project">Project</a>
             <a href="#faq-section" class="nav-link" data-i18n="nav.faq">FAQs</a>
+            <div class="language-icon-wrapper mobile-menu">
+                <button class="language-icon-btn mobile-menu" onclick="toggleLanguageDropdown('mobile')" aria-label="Select Language">
+                    🌐 Language
+                </button>
+                <div class="language-dropdown" id="language-dropdown-mobile">
+                    <div class="language-option" onclick="changeLanguageFromDropdown('en-SG')">
+                        🇬🇧 English
+                    </div>
+                    <div class="language-option" onclick="changeLanguageFromDropdown('es-MX')">
+                        🇲🇽 Español
+                    </div>
+                </div>
+            </div>
             <!-- <div class="language-toggle mobile" id="language-toggle-mobile" style="position: relative; z-index: 9999; pointer-events: auto;"></div> --><div class="book-call-wrapper is-mobile">
                 <div class="call-name-wrapper">
                     <div class="image-account-wrapper">
@@ -1260,6 +1297,7 @@
     <script src="assets/js/modules/language-detector.js" type="text/javascript"></script>
     <script src="assets/js/modules/lazy-loader.js" type="text/javascript"></script>
     <script src="assets/js/modules/app.js" type="text/javascript"></script>
+    <script src="assets/js/language-dropdown.js" type="text/javascript"></script>
     
 </body>
 </html>

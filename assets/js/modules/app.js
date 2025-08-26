@@ -154,57 +154,27 @@ class FoxTradingApp {
         // Remove old language selector if exists
         this.removeOldLanguageSelector();
 
-        // Wait for DOM to be fully ready
         const createSelectors = () => {
-            // Find insertion points with multiple fallback options
-            const bookCallWrapper = document.querySelector('.book-call-wrapper:not(.is-mobile)') ||
-                                   document.querySelector('.nav-menu') ||
-                                   document.querySelector('.container-nav');
-            
-            const mobileBookCall = document.querySelector('.book-call-wrapper.is-mobile') ||
-                                  document.querySelector('.nav-menu-phone');
-
-            // Language selectors commented out for now
-            /*
+            // Desktop selector - insert before book-call-wrapper
+            const bookCallWrapper = document.querySelector('.book-call-wrapper:not(.is-mobile)');
             if (bookCallWrapper) {
-                const selector = this.createLanguageSelectorElement('desktop');
-                if (bookCallWrapper.classList.contains('nav-menu') || bookCallWrapper.classList.contains('container-nav')) {
-                    bookCallWrapper.appendChild(selector);
-                } else {
-                    bookCallWrapper.parentNode.insertBefore(selector, bookCallWrapper);
-                }
+                const desktopSelector = this.createLanguageSelectorElement('desktop');
+                bookCallWrapper.parentNode.insertBefore(desktopSelector, bookCallWrapper);
                 this.log('Desktop language selector created');
-            } else {
-                this.log('Warning: Could not find desktop insertion point');
             }
 
-            if (mobileBookCall) {
-                const selector = this.createLanguageSelectorElement('mobile');
-                if (mobileBookCall.classList.contains('nav-menu-phone')) {
-                    mobileBookCall.appendChild(selector);
-                } else {
-                    mobileBookCall.parentNode.insertBefore(selector, mobileBookCall);
-                }
-                this.log('Mobile language selector created');
-            } else {
-                this.log('Warning: Could not find mobile insertion point');
-            }
-            */
-
-            // Update initial display
+            // Mobile selector already exists in HTML, just update it
             this.updateLanguageDisplay();
         };
 
-        // Try immediately, then with delays if needed
-        createSelectors();
+        // Execute immediately if DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', createSelectors);
+        } else {
+            setTimeout(createSelectors, 100);
+        }
         
-        // Fallback: try again after a short delay if selectors weren't created
-        setTimeout(() => {
-            if (!document.querySelector('.language-selector')) {
-                this.log('Retrying language selector creation...');
-                createSelectors();
-            }
-        }, 100);
+        this.log('Language selector creation initiated');
     }
 
     /**
@@ -213,13 +183,11 @@ class FoxTradingApp {
     createLanguageSelectorElement(type) {
         const container = document.createElement('div');
         container.className = `language-selector ${type === 'mobile' ? 'mobile' : 'desktop'}`;
-        container.style.cssText = 'position: relative; z-index: 9999; pointer-events: auto;';
         
         const select = document.createElement('select');
-        select.id = type === 'mobile' ? 'language-dropdown-mobile' : 'language-dropdown';
-        select.className = 'lang-dropdown';
+        select.id = type === 'mobile' ? 'language-dropdown-mobile' : 'language-dropdown-desktop';
+        select.className = 'language-selector-dropdown';
         select.setAttribute('aria-label', 'Select Language');
-        select.style.cssText = 'position: relative; z-index: 10000; pointer-events: auto; display: block;';
 
         // Add options
         this.config.supportedLanguages.forEach(lang => {
@@ -234,13 +202,12 @@ class FoxTradingApp {
             select.value = this.i18n.getCurrentLanguage();
         }
 
-        // Direct event handling
+        // Event handling
         const handleChange = (event) => {
             console.log('🎯 Language selector CHANGE event!', event.target.value);
             const newLanguage = event.target.value;
             if (newLanguage && newLanguage !== this.i18n?.getCurrentLanguage()) {
                 this.log(`Language selector changed to: ${newLanguage}`);
-                // Use timeout to ensure DOM is ready
                 setTimeout(() => {
                     this.handleLanguageChange(newLanguage, 'manual');
                 }, 10);
@@ -535,20 +502,9 @@ class FoxTradingApp {
      * Create basic language selector for fallback
      */
     createBasicLanguageSelector() {
-        const bookCall = document.querySelector('.book-call-wrapper:not(.is-mobile)');
-        if (!bookCall) return;
-
-        const container = document.createElement('div');
-        container.className = 'language-selector basic';
-        
-        const button = document.createElement('button');
-        button.textContent = '🌐 Language';
-        button.addEventListener('click', () => {
-            alert('Language switching temporarily unavailable');
-        });
-        
-        container.appendChild(button);
-        bookCall.parentNode.insertBefore(container, bookCall);
+        // Language selector disabled - no fallback selector needed
+        this.log('Basic language selector disabled');
+        return;
     }
 
     /**

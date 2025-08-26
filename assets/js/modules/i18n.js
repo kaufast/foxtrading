@@ -288,20 +288,16 @@ class I18n {
      * @private
      */
     _updateLanguageSelector() {
-        const selectors = document.querySelectorAll('.language-selector select, #language-dropdown, #language-dropdown-mobile');
+        const selectors = document.querySelectorAll('.language-selector select, #language-dropdown-desktop, #language-dropdown-mobile, #language-select-mobile, .language-selector-dropdown');
         
         selectors.forEach(selector => {
             if (selector) {
                 selector.value = this.currentLanguage;
                 
-                // Update flag display if needed
-                const flag = this.translate('meta.flag');
-                const name = this.translate('meta.languageName');
-                
-                // Find current option and update if needed
+                // Update visual state for dropdowns
                 const currentOption = selector.querySelector(`option[value="${this.currentLanguage}"]`);
                 if (currentOption) {
-                    currentOption.textContent = `${flag} ${name}`;
+                    currentOption.selected = true;
                 }
             }
         });
