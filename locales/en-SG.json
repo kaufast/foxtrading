@@ -7,7 +7,7 @@
     "team": "Core team",
     "testimonial": "Testimonials",
     "faq": "FAQs",
-    "bookCall": "Talk to us"
+    "bookCall": "Book a call"
   },
   "hero": {
     "title": "Bringing premium flavors from Mexico",
@@ -212,8 +212,8 @@
     "error": "Oops! Something went wrong whilst submitting the form."
   },
   "founder": {
-    "name": "Erick M.",
-    "position": "Agent"
+    "name": "Eric Winston",
+    "position": "Construction Principle"
   },
  "meta": {
     "languageName": "English",
