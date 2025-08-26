@@ -112,30 +112,62 @@ function handleKeyDown(event) {
  * Initialize dropdown event listeners
  */
 function initLanguageDropdown() {
+    console.log('🎯 Initializing language dropdown...');
+    
     // Add click outside listener
     document.addEventListener('click', handleClickOutside);
     
     // Add keyboard listener
     document.addEventListener('keydown', handleKeyDown);
     
-    // Add direct event listeners to all language buttons as backup
-    const languageButtons = document.querySelectorAll('.language-icon-btn');
-    languageButtons.forEach(button => {
-        console.log('🎯 Adding direct event listener to button:', button);
-        button.addEventListener('click', function(event) {
-            console.log('🎯 DIRECT click event fired!', event);
-            event.stopPropagation();
-            event.preventDefault();
+    // Wait a bit for DOM to be fully ready, then add event listeners
+    setTimeout(() => {
+        const languageButtons = document.querySelectorAll('.language-icon-btn');
+        console.log('🎯 Found language buttons:', languageButtons.length);
+        
+        languageButtons.forEach((button, index) => {
+            console.log(`🎯 Adding event listener to button ${index}:`, button);
             
-            // Determine type based on button location
-            let type = 'navbar';
-            if (button.classList.contains('mobile-menu')) {
-                type = 'mobile';
-            }
+            // Remove any existing onclick to avoid conflicts
+            button.removeAttribute('onclick');
             
-            toggleLanguageDropdown(type, event);
+            button.addEventListener('click', function(event) {
+                console.log('🎯 DIRECT click event fired on button!', event);
+                event.stopPropagation();
+                event.preventDefault();
+                
+                // Determine type based on button location
+                let type = 'navbar';
+                if (button.classList.contains('mobile-menu')) {
+                    type = 'mobile';
+                }
+                
+                console.log('🎯 Calling toggleLanguageDropdown with type:', type);
+                toggleLanguageDropdown(type, event);
+            });
+            
+            // Also add mousedown event as backup
+            button.addEventListener('mousedown', function(event) {
+                console.log('🎯 MOUSEDOWN event fired!', event);
+            });
         });
-    });
+        
+        // Also set up language option click handlers
+        const languageOptions = document.querySelectorAll('.language-option');
+        console.log('🎯 Found language options:', languageOptions.length);
+        
+        languageOptions.forEach((option, index) => {
+            console.log(`🎯 Adding event listener to option ${index}:`, option);
+            option.removeAttribute('onclick');
+            
+            option.addEventListener('click', function(event) {
+                console.log('🎯 Language option clicked!', option);
+                const langCode = option.textContent.includes('English') ? 'en-SG' : 'es-MX';
+                changeLanguageFromDropdown(langCode);
+            });
+        });
+        
+    }, 500);
     
     // Update current language display when language changes
     if (window.foxTradingApp && window.foxTradingApp.i18n) {
@@ -143,7 +175,7 @@ function initLanguageDropdown() {
         console.log('Language dropdown initialized with foxTradingApp');
     }
     
-    console.log('Language dropdown initialized with direct listeners');
+    console.log('Language dropdown initialization complete');
 }
 
 /**
