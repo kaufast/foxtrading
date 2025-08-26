@@ -4261,7 +4261,7 @@ h6 {
 }
 
 .title-spesification {
-  color: #121212;
+  color: #555555;
   letter-spacing: 0;
   width: 100%;
   margin-top: 0;
@@ -4987,7 +4987,7 @@ h6 {
   
   .title-spesification {
     font-size: 11px !important;
-    color: #888 !important;
+    color: #555555 !important;
     font-weight: 400 !important;
   }
   
