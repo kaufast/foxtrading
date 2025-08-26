@@ -1,15 +1,15 @@
 /**
  * Language Detection Module for FoxTrading Singapore
  * Handles automatic language detection optimized for Singapore market
- * Supports en-GB (British English) and es-MX (Mexican Spanish)
+ * Supports en-SG (British English) and es-MX (Mexican Spanish)
  * Primary market: Singapore with Mexican food exports
  */
 class LanguageDetector {
     constructor(options = {}) {
         // Singapore market focus - English as primary, Spanish for Mexican suppliers/content
-        this.supportedLanguages = options.supportedLanguages || ['en-GB', 'es-MX'];
-        this.defaultLanguage = options.defaultLanguage || 'en-GB'; // English default for Singapore
-        this.fallbackLanguage = options.fallbackLanguage || 'en-GB';
+        this.supportedLanguages = options.supportedLanguages || ['en-SG', 'es-MX'];
+        this.defaultLanguage = options.defaultLanguage || 'en-SG'; // English default for Singapore
+        this.fallbackLanguage = options.fallbackLanguage || 'en-SG';
         
         // Singapore timezone identifiers (primary market)
         this.singaporeTimezones = [
@@ -197,7 +197,7 @@ class LanguageDetector {
         };
         
         try {
-            // Check for path-based routing (e.g., /en-GB/ or /es-MX/)
+            // Check for path-based routing (e.g., /en-SG/ or /es-MX/)
             const pathname = window.location.pathname;
             const pathSegments = pathname.split('/').filter(segment => segment.length > 0);
             
@@ -292,7 +292,7 @@ class LanguageDetector {
             // Check for Singapore timezone (highest priority)
             if (this.singaporeTimezones.includes(timezone)) {
                 result.detected = true;
-                result.language = 'en-GB';
+                result.language = 'en-SG';
                 result.priority = this.detectionPriorities.timezone_singapore;
                 result.reason = 'singapore_timezone';
                 result.confidence = 0.95;
@@ -310,7 +310,7 @@ class LanguageDetector {
             // Check for other English-speaking regions in APAC
             else if (this.englishRegionTimezones.includes(timezone)) {
                 result.detected = true;
-                result.language = 'en-GB';
+                result.language = 'en-SG';
                 result.priority = this.detectionPriorities.timezone_english_region;
                 result.reason = 'english_region_timezone';
                 result.confidence = 0.7;
@@ -410,7 +410,7 @@ class LanguageDetector {
                     // Singapore: 1.2966° N, 103.7764° E (with buffer)
                     if (latitude >= 1.1 && latitude <= 1.5 && longitude >= 103.6 && longitude <= 104.0) {
                         result.detected = true;
-                        result.language = 'en-GB';
+                        result.language = 'en-SG';
                         result.country = 'Singapore';
                         result.confidence = 0.95;
                         result.market = 'primary';
@@ -426,7 +426,7 @@ class LanguageDetector {
                     // Malaysia: 1°N to 7°N, 100°E to 119°E
                     else if (latitude >= 1 && latitude <= 7 && longitude >= 100 && longitude <= 119) {
                         result.detected = true;
-                        result.language = 'en-GB';
+                        result.language = 'en-SG';
                         result.country = 'Malaysia';
                         result.confidence = 0.7;
                         result.market = 'regional';
@@ -434,7 +434,7 @@ class LanguageDetector {
                     // Indonesia: 11°S to 6°N, 95°E to 141°E
                     else if (latitude >= -11 && latitude <= 6 && longitude >= 95 && longitude <= 141) {
                         result.detected = true;
-                        result.language = 'en-GB';
+                        result.language = 'en-SG';
                         result.country = 'Indonesia';
                         result.confidence = 0.6;
                         result.market = 'regional';
@@ -442,7 +442,7 @@ class LanguageDetector {
                     // Philippines: 4°N to 21°N, 116°E to 127°E
                     else if (latitude >= 4 && latitude <= 21 && longitude >= 116 && longitude <= 127) {
                         result.detected = true;
-                        result.language = 'en-GB';
+                        result.language = 'en-SG';
                         result.country = 'Philippines';
                         result.confidence = 0.7;
                         result.market = 'regional';
@@ -450,7 +450,7 @@ class LanguageDetector {
                     // Thailand: 5°N to 21°N, 97°E to 106°E
                     else if (latitude >= 5 && latitude <= 21 && longitude >= 97 && longitude <= 106) {
                         result.detected = true;
-                        result.language = 'en-GB';
+                        result.language = 'en-SG';
                         result.country = 'Thailand';
                         result.confidence = 0.6;
                         result.market = 'regional';
@@ -497,7 +497,7 @@ class LanguageDetector {
                 normalized.full = 'es-MX';
             } else if (normalized.base === 'en') {
                 // All English variants to British English (Singapore standard)
-                normalized.full = 'en-GB';
+                normalized.full = 'en-SG';
             } else {
                 normalized.full = normalized.base;
             }
@@ -524,7 +524,7 @@ class LanguageDetector {
         if (base === 'es') {
             return 'es-MX';
         } else if (base === 'en') {
-            return 'en-GB';
+            return 'en-SG';
         }
         
         // Return as-is if it's already supported
@@ -703,8 +703,8 @@ class LanguageDetector {
      */
     getSupportedLanguagesInfo() {
         return {
-            'en-GB': {
-                code: 'en-GB',
+            'en-SG': {
+                code: 'en-SG',
                 name: 'English (United Kingdom)',
                 nativeName: 'English (UK)',
                 flag: '🇬🇧',
@@ -730,7 +730,7 @@ class LanguageDetector {
     getMarketRecommendations() {
         return {
             singapore: {
-                primaryLanguage: 'en-GB',
+                primaryLanguage: 'en-SG',
                 reasoning: 'English is the primary business language in Singapore',
                 confidence: 0.95,
                 alternatives: []
@@ -739,10 +739,10 @@ class LanguageDetector {
                 primaryLanguage: 'es-MX',
                 reasoning: 'Spanish for Mexican suppliers and product information',
                 confidence: 0.9,
-                alternatives: ['en-GB']
+                alternatives: ['en-SG']
             },
             regional: {
-                primaryLanguage: 'en-GB',
+                primaryLanguage: 'en-SG',
                 reasoning: 'English as lingua franca for APAC business',
                 confidence: 0.8,
                 alternatives: []

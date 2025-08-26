@@ -1,9 +1,9 @@
 // Localization System for FoxTrading
 class LocalizationManager {
     constructor() {
-        this.currentLanguage = 'en-GB';
+        this.currentLanguage = 'en-SG';
         this.translations = {};
-        this.supportedLanguages = ['en-GB', 'es-MX'];
+        this.supportedLanguages = ['en-SG', 'es-MX'];
         this.init();
     }
 
@@ -51,16 +51,16 @@ class LocalizationManager {
         }
 
         // Default to English
-        return 'en-GB';
+        return 'en-SG';
     }
 
     async loadTranslations() {
         try {
             // Load both language files
-            const enResponse = await fetch('/assets/lang/en-GB.json');
+            const enResponse = await fetch('/assets/lang/en-SG.json');
             const esResponse = await fetch('/assets/lang/es-MX.json');
             
-            this.translations['en-GB'] = await enResponse.json();
+            this.translations['en-SG'] = await enResponse.json();
             this.translations['es-MX'] = await esResponse.json();
         } catch (error) {
             console.error('Error loading translations:', error);
@@ -71,7 +71,7 @@ class LocalizationManager {
 
     loadFallbackTranslations() {
         // Embedded fallback translations
-        this.translations['en-GB'] = {
+        this.translations['en-SG'] = {
             "nav": {
                 "home": "Home",
                 "about": "About",
@@ -179,7 +179,7 @@ class LocalizationManager {
             dropdownContainer.className = 'language-selector';
             dropdownContainer.innerHTML = `
                 <select id="language-dropdown" class="lang-dropdown">
-                    <option value="en-GB">🇬🇧 English (UK)</option>
+                    <option value="en-SG">🇬🇧 English (UK)</option>
                     <option value="es-MX">🇲🇽 Español (MX)</option>
                 </select>
             `;
