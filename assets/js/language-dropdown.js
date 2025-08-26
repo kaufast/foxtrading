@@ -10,7 +10,8 @@ let currentOpenDropdown = null;
  * Toggle language dropdown visibility
  * @param {string} type - Type of dropdown (main, scroll, mobile)
  */
-function toggleLanguageDropdown(type = 'main') {
+function toggleLanguageDropdown(type = 'navbar') {
+    console.log('🎯 Language dropdown clicked!', type);
     const dropdownId = `language-dropdown-${type}`;
     const dropdown = document.getElementById(dropdownId);
     
@@ -19,6 +20,8 @@ function toggleLanguageDropdown(type = 'main') {
         return;
     }
     
+    console.log('🎯 Found dropdown:', dropdown);
+    
     // Close any other open dropdowns
     if (currentOpenDropdown && currentOpenDropdown !== dropdown) {
         currentOpenDropdown.classList.remove('show');
@@ -26,13 +29,16 @@ function toggleLanguageDropdown(type = 'main') {
     
     // Toggle current dropdown
     const isShowing = dropdown.classList.contains('show');
+    console.log('🎯 Dropdown currently showing:', isShowing);
     
     if (isShowing) {
         dropdown.classList.remove('show');
         currentOpenDropdown = null;
+        console.log('🎯 Dropdown closed');
     } else {
         dropdown.classList.add('show');
         currentOpenDropdown = dropdown;
+        console.log('🎯 Dropdown opened');
     }
 }
 
