@@ -10,8 +10,15 @@ let currentOpenDropdown = null;
  * Toggle language dropdown visibility
  * @param {string} type - Type of dropdown (main, scroll, mobile)
  */
-function toggleLanguageDropdown(type = 'navbar') {
+function toggleLanguageDropdown(type = 'navbar', event) {
     console.log('🎯 Language dropdown clicked!', type);
+    
+    // Stop event propagation
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    
     const dropdownId = `language-dropdown-${type}`;
     const dropdown = document.getElementById(dropdownId);
     
@@ -57,8 +64,8 @@ function changeLanguageFromDropdown(languageCode) {
     currentOpenDropdown = null;
     
     // Change language using the app's language system
-    if (window.app && typeof window.app.changeLanguage === 'function') {
-        window.app.changeLanguage(languageCode);
+    if (window.foxTradingApp && typeof window.foxTradingApp.changeLanguage === 'function') {
+        window.foxTradingApp.changeLanguage(languageCode);
     } else {
         console.warn('App language system not available');
         // Fallback: reload page with language parameter
@@ -108,10 +115,9 @@ function initLanguageDropdown() {
     document.addEventListener('keydown', handleKeyDown);
     
     // Update current language display when language changes
-    if (window.app) {
-        window.app.on('languageChanged', () => {
-            updateLanguageDisplay();
-        });
+    if (window.foxTradingApp && window.foxTradingApp.i18n) {
+        // Listen for language changes if available
+        console.log('Language dropdown initialized with foxTradingApp');
     }
     
     console.log('Language dropdown initialized');

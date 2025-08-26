@@ -53,7 +53,7 @@ class FoxTradingApp {
             });
 
             // Detect initial language
-            const detection = this.detector.detectLanguage();
+            const detection = await this.detector.detectLanguage();
             this.log('Language detection result:', detection);
             console.log('🔍 FULL URL ANALYSIS:', {
                 pathname: window.location.pathname,
@@ -75,6 +75,12 @@ class FoxTradingApp {
 
             // Initialize i18n
             await this.i18n.init();
+
+            // If language was detected from URL, ensure it's applied
+            if (detection.method === 'path' && detection.language !== this.config.defaultLanguage) {
+                this.log(`Applying URL-detected language: ${detection.language}`);
+                await this.i18n.setLanguage(detection.language);
+            }
 
             // Add translation attributes to HTML
             this.addTranslationAttributes();
@@ -306,14 +312,19 @@ class FoxTradingApp {
      */
     updateURL(language) {
         try {
-            if (language === this.config.defaultLanguage) {
-                // For default language (English), redirect to root
-                if (window.location.pathname !== '/') {
-                    window.location.href = '/';
+            const currentPath = window.location.pathname;
+            const targetPath = language === this.config.defaultLanguage ? '/' : `/${language}`;
+            
+            // Only redirect if we're not already on the correct path
+            if (currentPath !== targetPath) {
+                this.log(`Updating URL from ${currentPath} to ${targetPath}`);
+                
+                // Use history.pushState for better UX instead of hard redirect
+                if (history && history.pushState) {
+                    history.pushState(null, '', targetPath);
+                } else {
+                    window.location.href = targetPath;
                 }
-            } else {
-                // For non-default languages, redirect to path-based URL
-                window.location.href = `/${language}`;
             }
             
         } catch (error) {
@@ -895,6 +906,7 @@ class FoxTradingApp {
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         window.foxTradingApp = new FoxTradingApp();
+        window.app = window.foxTradingApp; // Compatibility alias
         await window.foxTradingApp.init();
     } catch (error) {
         console.error('Failed to initialize FoxTrading App:', error);
