@@ -28,6 +28,7 @@ function toggleLanguageDropdown(type = 'navbar', event) {
     }
     
     console.log('🎯 Found dropdown:', dropdown);
+    console.log('🎯 Dropdown computed styles BEFORE:', window.getComputedStyle(dropdown));
     
     // Close any other open dropdowns
     if (currentOpenDropdown && currentOpenDropdown !== dropdown) {
@@ -37,6 +38,7 @@ function toggleLanguageDropdown(type = 'navbar', event) {
     // Toggle current dropdown
     const isShowing = dropdown.classList.contains('show');
     console.log('🎯 Dropdown currently showing:', isShowing);
+    console.log('🎯 Dropdown classes BEFORE:', dropdown.className);
     
     if (isShowing) {
         dropdown.classList.remove('show');
@@ -46,6 +48,8 @@ function toggleLanguageDropdown(type = 'navbar', event) {
         dropdown.classList.add('show');
         currentOpenDropdown = dropdown;
         console.log('🎯 Dropdown opened');
+        console.log('🎯 Dropdown classes AFTER:', dropdown.className);
+        console.log('🎯 Dropdown computed styles AFTER:', window.getComputedStyle(dropdown));
     }
 }
 

@@ -5930,7 +5930,7 @@ h6 {
   border-radius: 8px;
   min-width: 150px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  z-index: 9999;
+  z-index: 10002;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
