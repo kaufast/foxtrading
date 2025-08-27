@@ -40,6 +40,17 @@
     <!-- Preload LCP hero image for faster loading -->
     <link rel="preload" as="image" href="assets/images/food/hero-1.webp.webp" fetchpriority="high">
     
+    <!-- Prefetch key product images for improved performance -->
+    <link rel="prefetch" href="assets/images/food/Frozen-Foods.webp">
+    <link rel="prefetch" href="assets/images/food/Fresh-Foods.webp">
+    <link rel="prefetch" href="assets/images/food/Procesed.webp">
+    <link rel="prefetch" href="assets/images/food/Livestock.webp">
+    <link rel="prefetch" href="assets/images/food/mezcal.webp">
+    
+    <!-- Prefetch mobile versions for mobile users -->
+    <link rel="prefetch" href="assets/images/food/hero-1-mobile.webp">
+    <link rel="prefetch" href="assets/images/food/hero-1-tablet.webp">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/web-shared.css" type="text/css">
     <link rel="stylesheet" href="assets/css/google-fonts.css" media="all">
@@ -194,7 +205,7 @@
                         </label>
                     </form>
                     <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
-                        <!-- <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" alt="" data-original-src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c5894a5f38523cd438f2_Group%20482161.svg" data-original-srcset="" srcset="" class="lazy-image"> -->
+                        <!-- <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" alt="" data-original-src="https://.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c5894a5f38523cd438f2_Group%20482161.svg" data-original-srcset="" srcset="" class="lazy-image"> -->
                         <div class="wrapper-susccess-text">
                             <h3 class="heading-3" data-i18n="form.success">Successful!</h3>
                             <div class="paragraph-body-3 text_grey" data-i18n="form.successMessage">Thank you! We've received your information. Someone from our team will reach out shortly.</div>
@@ -258,7 +269,7 @@
                 </div>
                 <div class="book-call-wrapper">
                     <div class="image-account-wrapper">
-                        <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
+                        <img src="/assets/images/icons/agent.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
                         <div class="green-circle"></div>
                     </div>
                     <div class="wrapper-founder">
@@ -281,7 +292,7 @@
             <!-- <div class="language-toggle mobile" id="language-toggle-mobile" style="position: relative; z-index: 9999; pointer-events: auto;"></div> --><div class="book-call-wrapper is-mobile">
                 <div class="call-name-wrapper">
                     <div class="image-account-wrapper">
-                        <img src="https://cdn.prod.website-files.com/689161a0ec1f462be1dbfd7e/6891c375f2a70df03518a8c8_Frame%202087326944.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
+                        <img src="/assets/images/icons/agent.svg" loading="lazy" width="36" height="36" alt="" class="image-account">
                         <div class="green-circle"></div>
                     </div>
                     <div class="wrapper-founder">
@@ -303,8 +314,8 @@
         <div class="w-layout-blockcontainer container w-container">
             <div class="hero-contain">
                 <div class="hero-title-wrapper">
-                    <div class="hero-titile-text" data-i18n="hero.title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Bringing premium flavors from Mexico</div>
-                    <div class="hero-sub-title" data-i18n="hero.subtitle" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Discover our curated selection of fresh produce, frozen blends, specialty foods, proteins, and fine spirits—sourced responsibly and delivered globally with unmatched quality.</div>
+                    <h1 class="hero-titile-text" data-i18n="hero.title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Bringing premium flavors from Mexico</h1>
+                    <p class="hero-sub-title" data-i18n="hero.subtitle" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Discover our curated selection of fresh produce, frozen blends, specialty foods, proteins, and fine spirits—sourced responsibly and delivered globally with unmatched quality.</p>
                 </div>
                 <div class="hero-overlay"></div>
                 <div class="hero-slider-wrapper">
@@ -350,8 +361,8 @@
                 <div class="sub-label-section" data-i18n="about.label">ABOUT US</div>
                 <div class="about-us-right-content">
                     <div class="about-us-text-wrapper">
-                        <div class="title-about-us" data-i18n="about.title">We are the premier trading partner connecting Mexico's finest agricultural, marine, and artisanal products directly to the discerning Singaporean market. Our specialty lies in seamless logistics, regulatory expertise, and an unwavering commitment to quality.</div>
-                        <div class="desription-about-us" data-i18n="about.description">Our dedicated team manages every stage of trade — sourcing, logistics, and delivery — so your business receives only the finest products, on time, and with unmatched consistency.</div>
+                        <h2 class="title-about-us" data-i18n="about.title">We are the premier trading partner connecting Mexico's finest agricultural, marine, and artisanal products directly to the discerning Singaporean market. Our specialty lies in seamless logistics, regulatory expertise, and an unwavering commitment to quality.</h2>
+                        <p class="desription-about-us" data-i18n="about.description">Our dedicated team manages every stage of trade — sourcing, logistics, and delivery — so your business receives only the finest products, on time, and with unmatched consistency.</p>
                     </div>
                     <div class="about-us-amount">
                         <div class="amount-item">
@@ -643,7 +654,7 @@
             <div class="projects-contain">
                 <div class="header-section project" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                     <div class="sub-label-section" data-i18n="projects.label" style="translate: none; rotate: none; scale: none; transform: translate(0px, 20px); opacity: 0;">OUR PRODUCTS</div>
-                    <div class="title-section project" data-i18n="projects.title">Quality sourced, globally traded. Our portfolio reflects a commitment to excellence in international food trading.</div>
+                    <h2 class="title-section project" data-i18n="projects.title">Quality sourced, globally traded. Our portfolio reflects a commitment to excellence in international food trading.</h2>
                 </div>
                 <div class="list-project">
                     <!-- Project 1 -->
@@ -652,7 +663,7 @@
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project1.title">Fresh Foods</div>
+                                    <h3 class="title-project" data-i18n="projects.project1.title">Fresh Foods</h3>
                                     <div class="description-project" data-i18n="projects.project1.description">Premium fresh produce including fruits, vegetables, and herbs. Sourced directly from trusted growers and delivered with optimal freshness maintained through cold-chain logistics.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
@@ -722,7 +733,7 @@
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project2.title">Frozen &amp; Blends</div>
+                                    <h3 class="title-project" data-i18n="projects.project2.title">Frozen &amp; Blends</h3>
                                     <div class="description-project" data-i18n="projects.project2.description">Exotic tropical fruits including pineapple, coconut, passion fruit, banana, and more. Hand-selected at peak ripeness and shipped with care to maintain exceptional quality and flavor.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
@@ -792,7 +803,7 @@
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project3.title">Specialty Foods</div>
+                                    <h3 class="title-project" data-i18n="projects.project3.title">Specialty Foods</h3>
                                     <div class="description-project" data-i18n="projects.project3.description">A curated selection of value-added and prepared products crafted to enhance flavor, nutrition, and convenience. From traditional Mexican specialties to organic and eco-friendly innovations, these foods bring unique taste experiences and practical solutions to global markets.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
@@ -862,7 +873,7 @@
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project4.title">Meat &amp; Fish Specialties</div>
+                                    <h3 class="title-project" data-i18n="projects.project4.title">Meat &amp; Fish Specialties</h3>
                                     <div class="description-project" data-i18n="projects.project4.description">Premium animal-based proteins sourced from trusted producers. Our selection includes beef, poultry, pork, lamb, fish, and seafood—delivered with strict quality standards to ensure freshness, nutrition, and global market readiness.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
@@ -932,7 +943,7 @@
                         <div class="project-right-content">
                             <div class="project-card-top">
                                 <div class="project-card-header">
-                                    <div class="title-project" data-i18n="projects.project5.title">Premium Spirits &amp; Beverages</div>
+                                    <h3 class="title-project" data-i18n="projects.project5.title">Premium Spirits &amp; Beverages</h3>
                                     <div class="description-project" data-i18n="projects.project5.description">Premium alcoholic beverages including traditional Mexican spirits, craft beers, wines, and international spirits. Carefully selected from renowned distilleries and breweries worldwide.</div>
                                 </div>
                                 <div class="project-list-type" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
@@ -997,7 +1008,7 @@
             <div class="team-contain">
                 <div class="header-section testimonial">
                     <div class="sub-label-section" data-i18n="team.label">Core teams</div>
-                    <div class="title-section temas" data-i18n="team.title">At Foxtrading, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces.</div>
+                    <h2 class="title-section temas" data-i18n="team.title">At Foxtrading, our passionate team of architects and designers is dedicated to turning your visions into breathtaking spaces.</h2>
                 </div>
                 <div class="team-list is-desktop">
                     <div class="team-item">
