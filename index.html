@@ -51,9 +51,15 @@
     <link rel="prefetch" href="assets/images/food/hero-1-mobile.webp">
     <link rel="prefetch" href="assets/images/food/hero-1-tablet.webp">
     
-    <!-- Stylesheets -->
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="assets/css/web-shared.css" as="style">
+    <link rel="preload" href="assets/css/google-fonts.css" as="style">
+    
+    <!-- Load critical CSS -->
     <link rel="stylesheet" href="assets/css/web-shared.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/google-fonts.css" media="all">
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="assets/css/google-fonts.css" media="print" onload="this.media='all'; this.onload=null;">
     
     <!-- Favicons -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -224,7 +230,7 @@
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
             <div class="container-nav" style="translate: none; rotate: none; scale: none; width: 90%; transform: translate(0px, 15%);">
                 <a href="/" aria-current="page" class="brand w-inline-block">
-                    <img src="/assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" style="height: 50px; width: auto;">
+                    <img src="/assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" style="height: 50px; width: auto;" width="206" height="50">
                 </a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
                     <a href="#about-section" class="nav-link w-nav-link" data-i18n="nav.about">About</a>
@@ -255,7 +261,7 @@
             </div>
             <div class="container-nav is-scroll d-none" style="translate: none; rotate: none; scale: none; width: 90%; transform: translate(0px, 15%);">
                 <a href="/" aria-current="page" class="brand w-nav-brand" aria-label="home">
-                    <img src="/assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" style="height: 40px; width: auto;">
+                    <img src="/assets/images/foxtradingsingapore-black.webp" alt="FoxTrading Singapore" style="height: 40px; width: auto;" width="165" height="40">
                 </a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
                     <a href="#about-section" class="nav-link w-nav-link" data-i18n="nav.about">About</a>
