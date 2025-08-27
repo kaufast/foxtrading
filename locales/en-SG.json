@@ -191,9 +191,15 @@
   },
   "footer": {
     "changelog": "Privacy Policy",
-    "styleGuide": "Style guide",
+    "styleGuide": "Exporting ",
     "licence": "Licence",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "contact": "Contact",
+    "location": "Location",
+    "email": "Email",
+    "phone": "Phone",
+    "address1": "16 Raffles Hong Leong Building,",
+    "address2": "Singapore"
   },
   "form": {
     "yourName": "Your name",
@@ -213,7 +219,7 @@
   },
   "founder": {
     "name": "Eric Winston",
-    "position": "Construction Principle"
+    "position": "Agent"
   },
  "meta": {
     "languageName": "English",

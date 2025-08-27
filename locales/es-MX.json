@@ -191,7 +191,13 @@
     "changelog": "Política de privacidad",
     "styleGuide": "Guía de estilo",
     "licence": "Licencia",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "contact": "Contacto",
+    "location": "Ubicación",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "address1": "16 Raffles Hong Leong Building,",
+    "address2": "Singapur"
   },
   "form": {
     "yourName": "Tu nombre",
