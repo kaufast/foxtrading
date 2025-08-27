@@ -191,13 +191,13 @@
   },
   "footer": {
     "changelog": "Privacy Policy",
-    "styleGuide": "Exporting ",
+    "styleGuide": "Exporting Guidelines",
     "licence": "Licence",
     "rights": "All rights reserved.",
     "contact": "Contact",
     "location": "Location",
     "email": "Email",
-    "phone": "Phone",
+    phone": "Phone",
     "address1": "16 Raffles Hong Leong Building,",
     "address2": "Singapore"
   },
